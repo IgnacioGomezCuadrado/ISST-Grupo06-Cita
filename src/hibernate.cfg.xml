@@ -20,5 +20,6 @@
 		<mapping class="es.upm.dit.isst.grupo06.cita.model.Cita" />
 		<mapping class="es.upm.dit.isst.grupo06.cita.model.Consulta" />
 		<mapping class="es.upm.dit.isst.grupo06.cita.model.HorarioConsulta" />
+		<mapping class="es.upm.dit.isst.grupo06.cita.model.Especialidad" />
 	</session-factory>
 </hibernate-configuration>
