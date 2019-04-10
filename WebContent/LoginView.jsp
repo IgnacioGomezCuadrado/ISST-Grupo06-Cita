@@ -22,7 +22,6 @@
 
 			<h1>DOCAPP</h1>
 			<p>Una forma óptima de gestionar todas tus citas médicas</p>
-			<a href="#login">Acceder</a>
 
 		</section>
 
