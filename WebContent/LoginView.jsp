@@ -38,7 +38,7 @@
 									type="password" name="password" placeholder="password" />
 							</div>
 							<button type="submit">Login</button>
-							<a href=""> ¿Olvidó la contraseña?</a>
+							<a href="ResetPassword.jsp"> ¿Olvidó la contraseña?</a>
 
 							<h3>¿No tienes cuenta?</h3>
 							<a href="">Regístrate</a>
