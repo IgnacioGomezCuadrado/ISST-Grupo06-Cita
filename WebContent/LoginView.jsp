@@ -41,11 +41,10 @@
 							<a href="ResetPassword.jsp"> ¿Olvidó la contraseña?</a>
 
 							<h3>¿No tienes cuenta?</h3>
-							<a href="">Regístrate</a>
+							<a href="Registro.jsp">Regístrate</a>
 						</form>
 					</div>
 		</section>
 	</shiro:guest>
 
 </body>
-</html>

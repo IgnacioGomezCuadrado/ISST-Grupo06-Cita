@@ -1,10 +1,11 @@
 <form action="ResetPasswordServlet">
 
     <input type="text" name="dni" placeholder="DNI"/>
-    <input type="password" name="passwordActual" placeholder="Contrase�a actual"/>
+    <input type="password" name="passwordActual" placeholder="Contraseña actual"/>
 
-    <input type="password" name="passwordNueva" placeholder="Nueva Contrase�a"/>
-    <input type="password" name="passwordNuevaRep" placeholder="Repita nueva Contrase�a"/>
-    <button class="btn btn-primary" type="submit">Cambiar contrase�a</button>
+    <input type="password" name="passwordNueva" placeholder="Nueva Contraseña"/>
+    <input type="password" name="passwordNuevaRep" placeholder="Repita nueva Contraseña"/>
+    <button class="btn btn-primary" type="submit">Cambiar contraseña</button>
+    <button class="btn btn-primary" type="submit">Volver atrás</a></button>
 
 </form>
