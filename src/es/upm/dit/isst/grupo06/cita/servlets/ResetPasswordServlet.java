@@ -1,4 +1,4 @@
-package es.upm.dit.isst.webLab.servlets;
+package es.upm.dit.isst.grupo06.cita.servlets;
 
 import java.io.IOException;
 
