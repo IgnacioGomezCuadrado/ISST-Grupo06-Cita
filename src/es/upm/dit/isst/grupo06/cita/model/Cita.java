@@ -25,5 +25,33 @@ public class Cita implements Serializable {
 	@ManyToOne
 	private Consulta consulta;
 	
+	public Cita() {
+		
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
 	
+	public Time getHora() {
+		return hora;
+	}
+
+	public void setHora(Time hora) {
+		this.hora = hora;
+	}
+
+	
+
+	
+
 }
+
