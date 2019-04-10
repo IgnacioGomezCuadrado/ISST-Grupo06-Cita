@@ -1,4 +1,4 @@
-package es.upm.dit.isst.webLab.dao;
+package es.upm.dit.isst.grupo06.cita.dao;
 
 import java.util.List;
 import es.upm.dit.isst.webLab.model.Paciente;
