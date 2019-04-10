@@ -1,26 +1,27 @@
 package es.upm.dit.isst.grupo06.cita.servlets;
 
 import java.io.IOException;
+import java.util.Collection;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/PacienteServlet")
-public class PacienteServlet extends HttpServlet {
+@WebServlet("/FechaServlet")
+public class FechaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = req.getParameter("id");
+		String idMedico = req.getParameter("medico");
+		
+		MedicoDAO meddao = MedicoDAOImplementation.getInstance();
+		Medico medico = meddao.read(idMedico);
 
-		PacienteDAO pacientedao = PacienteDAOImplementation.getInstance();
-		Paciente paciente = pacientedao.read(id);
+		req.getSession().setAttribute("medico", medico);
 
-		req.getSession().setAttribute("paciente", paciente);
-
-		getServletContext().getRequestDispatcher("/PacienteView.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/FechaView.jsp").forward(req, resp);
 	}
 
 }
