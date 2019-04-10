@@ -1,15 +1,18 @@
-package es.upm.dit.isst.webLab.dao;
+package es.upm.dit.isst.grupo06.cita.dao;
 
-import java.util.List;
-import es.upm.dit.isst.webLab.model.Paciente;
+import java.util.Collection;
+
+import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 public interface PacienteDAO {
-
 	
-	public void createPaciente(Paciente paciente);
-	public void updatePaciente(Paciente paciente);
-	public void deletePaciente(Paciente paciente);
-	public Paciente readPaciente (String dni);
-	public Paciente loginPaciente(String dni, String password);
-	public List <Paciente> readAllPaciente();
+	public void create(Paciente paciente);
+
+	public Paciente read(String dni);
+
+	public void update(Paciente paciente);
+
+	public void delete(Paciente paciente);
+
+	public Collection<Paciente> readAll();
 }

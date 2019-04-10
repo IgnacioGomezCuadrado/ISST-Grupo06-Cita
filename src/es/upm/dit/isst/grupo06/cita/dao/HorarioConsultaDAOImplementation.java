@@ -4,29 +4,27 @@ import java.util.Collection;
 
 import org.hibernate.Session;
 
-import es.upm.dit.isst.grupo06.cita.model.Cita;
-import es.upm.dit.isst.grupo06.cita.model.Medico;
-import es.upm.dit.isst.grupo06.cita.dao.SessionFactoryService;
+import es.upm.dit.isst.grupo06.cita.model.HorarioConsulta;
 
-public class CitaDAOImplementation implements CitaDAO {
-	private static CitaDAOImplementation instancia = null;
+public class HorarioConsultaDAOImplementation implements HorarioConsultaDAO{
+	private static HorarioConsultaDAOImplementation instancia = null;
 
-	private CitaDAOImplementation() {
+	private HorarioConsultaDAOImplementation() {
 	}
 
-	public static CitaDAOImplementation getInstance() {
+	public static HorarioConsultaDAOImplementation getInstance() {
 		if (null == instancia)
-			instancia = new CitaDAOImplementation();
+			instancia = new HorarioConsultaDAOImplementation();
 		return instancia;
 	}
-
+	
 	@Override
-	public void create(Cita cita) {
+	public void create(HorarioConsulta horarioConsulta) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			session.save(cita);
+			session.save(horarioConsulta);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			// manejar excepciones
@@ -37,14 +35,14 @@ public class CitaDAOImplementation implements CitaDAO {
 	}
 
 	@Override
-	public Cita read(int id) {
+	public HorarioConsulta read(int id) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			Cita cita = session.get(Cita.class, id);
+			HorarioConsulta horarioConsulta = session.get(HorarioConsulta.class, id);
 			session.getTransaction().commit();
-			return cita;
+			return horarioConsulta;
 		} catch (Exception e) {
 			// manejar excepciones
 			System.out.println(e);
@@ -55,12 +53,12 @@ public class CitaDAOImplementation implements CitaDAO {
 	}
 
 	@Override
-	public void update(Cita cita) {
+	public void update(HorarioConsulta horarioConsulta) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			session.saveOrUpdate(cita);
+			session.saveOrUpdate(horarioConsulta);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			// manejar excepciones
@@ -71,12 +69,12 @@ public class CitaDAOImplementation implements CitaDAO {
 	}
 
 	@Override
-	public void delete(Cita cita) {
+	public void delete(HorarioConsulta horarioConsulta) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			session.delete(cita);
+			session.delete(horarioConsulta);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			// manejar excepciones
@@ -88,33 +86,14 @@ public class CitaDAOImplementation implements CitaDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public Collection<Cita> readAll() {
+	public Collection<HorarioConsulta> readAll() {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			Collection<Cita> citas = session.createQuery("from Cita").list();
+			Collection<HorarioConsulta> horarios = session.createQuery("from HorarioConsulta").list();
 			session.getTransaction().commit();
-			return citas;
-		} catch (Exception e) {
-			// manejar excepciones
-			System.out.println(e);
-		} finally {
-			session.close();
-		}
-		return null;
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public Collection<Cita> getCitasDelDia(Medico medico, String fecha) {
-		Session session = SessionFactoryService.get().openSession();
-		try {
-			session.beginTransaction();
-			// operaciones
-			Collection<Cita> citas = session.createQuery("from Cita c where c.fecha = :fecha and medico = :medico").list();
-			session.getTransaction().commit();
-			return citas;
+			return horarios;
 		} catch (Exception e) {
 			// manejar excepciones
 			System.out.println(e);
