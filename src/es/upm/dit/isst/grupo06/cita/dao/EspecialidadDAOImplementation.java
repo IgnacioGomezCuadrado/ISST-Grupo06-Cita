@@ -4,29 +4,27 @@ import java.util.Collection;
 
 import org.hibernate.Session;
 
-import es.upm.dit.isst.grupo06.cita.model.Cita;
-import es.upm.dit.isst.grupo06.cita.model.Medico;
-import es.upm.dit.isst.grupo06.cita.dao.SessionFactoryService;
+import es.upm.dit.isst.grupo06.cita.model.Especialidad;
 
-public class CitaDAOImplementation implements CitaDAO {
-	private static CitaDAOImplementation instancia = null;
+public class EspecialidadDAOImplementation implements EspecialidadDAO{
+	private static EspecialidadDAOImplementation instancia = null;
 
-	private CitaDAOImplementation() {
+	private EspecialidadDAOImplementation() {
 	}
 
-	public static CitaDAOImplementation getInstance() {
+	public static EspecialidadDAOImplementation getInstance() {
 		if (null == instancia)
-			instancia = new CitaDAOImplementation();
+			instancia = new EspecialidadDAOImplementation();
 		return instancia;
 	}
 
 	@Override
-	public void create(Cita cita) {
+	public void create(Especialidad especialidad) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			session.save(cita);
+			session.save(especialidad);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			// manejar excepciones
@@ -37,14 +35,14 @@ public class CitaDAOImplementation implements CitaDAO {
 	}
 
 	@Override
-	public Cita read(int id) {
+	public Especialidad read(String nombre) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			Cita cita = session.get(Cita.class, id);
+			Especialidad especialidad = session.get(Especialidad.class, nombre);
 			session.getTransaction().commit();
-			return cita;
+			return especialidad;
 		} catch (Exception e) {
 			// manejar excepciones
 			System.out.println(e);
@@ -55,12 +53,12 @@ public class CitaDAOImplementation implements CitaDAO {
 	}
 
 	@Override
-	public void update(Cita cita) {
+	public void update(Especialidad especialidad) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			session.saveOrUpdate(cita);
+			session.saveOrUpdate(especialidad);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			// manejar excepciones
@@ -71,12 +69,12 @@ public class CitaDAOImplementation implements CitaDAO {
 	}
 
 	@Override
-	public void delete(Cita cita) {
+	public void delete(Especialidad especialidad) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			session.delete(cita);
+			session.delete(especialidad);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			// manejar excepciones
@@ -88,14 +86,14 @@ public class CitaDAOImplementation implements CitaDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public Collection<Cita> readAll() {
+	public Collection<Especialidad> readAll() {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			Collection<Cita> citas = session.createQuery("from Cita").list();
+			Collection<Especialidad> especialidades = session.createQuery("from Especialidad").list();
 			session.getTransaction().commit();
-			return citas;
+			return especialidades;
 		} catch (Exception e) {
 			// manejar excepciones
 			System.out.println(e);
@@ -104,24 +102,5 @@ public class CitaDAOImplementation implements CitaDAO {
 		}
 		return null;
 	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public Collection<Cita> getCitasDelDia(Medico medico, String fecha) {
-		Session session = SessionFactoryService.get().openSession();
-		try {
-			session.beginTransaction();
-			// operaciones
-			Collection<Cita> citas = session.createQuery("from Cita c where c.fecha = :fecha and medico = :medico").list();
-			session.getTransaction().commit();
-			return citas;
-		} catch (Exception e) {
-			// manejar excepciones
-			System.out.println(e);
-		} finally {
-			session.close();
-		}
-		return null;
-	}
-
+	
 }
