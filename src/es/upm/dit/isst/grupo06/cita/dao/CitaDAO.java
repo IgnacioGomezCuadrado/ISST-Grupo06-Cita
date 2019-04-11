@@ -1,5 +1,6 @@
 package es.upm.dit.isst.grupo06.cita.dao;
 
+import java.sql.Date;
 import java.util.Collection;
 
 import es.upm.dit.isst.grupo06.cita.model.Cita;
@@ -17,5 +18,5 @@ public interface CitaDAO {
 
 	public Collection<Cita> readAll();
 	
-	public Collection<Cita> getCitasDelDia(Medico medico, String fecha); //fecha en formato dd/MM/yyyy
+	public Collection<Cita> getCitasDelDia(Medico medico, Date fecha);
 }

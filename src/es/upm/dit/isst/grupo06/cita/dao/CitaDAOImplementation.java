@@ -1,5 +1,6 @@
 package es.upm.dit.isst.grupo06.cita.dao;
 
+import java.sql.Date;
 import java.util.Collection;
 
 import org.hibernate.Session;
@@ -105,9 +106,10 @@ public class CitaDAOImplementation implements CitaDAO {
 		return null;
 	}
 
+	//Metodo para consultar las citas asignadas a un medico un dia concreto
 	@SuppressWarnings("unchecked")
 	@Override
-	public Collection<Cita> getCitasDelDia(Medico medico, String fecha) {
+	public Collection<Cita> getCitasDelDia(Medico medico, Date fecha) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
