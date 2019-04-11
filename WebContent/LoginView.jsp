@@ -22,7 +22,6 @@
 
 			<h1>DOCAPP</h1>
 			<p>Una forma óptima de gestionar todas tus citas médicas</p>
-			<a href="#login">Acceder</a>
 
 		</section>
 
@@ -41,11 +40,10 @@
 							<a href="ResetPassword.jsp"> ¿Olvidó la contraseña?</a>
 
 							<h3>¿No tienes cuenta?</h3>
-							<a href="">Regístrate</a>
+							<a href="Registro.jsp">Regístrate</a>
 						</form>
 					</div>
 		</section>
 	</shiro:guest>
 
 </body>
-</html>
