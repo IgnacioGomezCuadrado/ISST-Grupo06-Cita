@@ -49,9 +49,52 @@ public class Cita implements Serializable {
 		this.hora = hora;
 	}
 
-	
+	public Medico getMedico() {
+		return medico;
+	}
 
-	
+	public void setMedico(Medico medico) {
+		this.medico = medico;
+	}
 
+	public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
+	public boolean isConfirmada() {
+		return confirmada;
+	}
+
+	public void setConfirmada(boolean confirmada) {
+		this.confirmada = confirmada;
+	}
+
+	public boolean isUrgencia() {
+		return urgencia;
+	}
+
+	public void setUrgencia(boolean urgencia) {
+		this.urgencia = urgencia;
+	}
+
+	public Consulta getConsulta() {
+		return consulta;
+	}
+
+	public void setConsulta(Consulta consulta) {
+		this.consulta = consulta;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }
 
