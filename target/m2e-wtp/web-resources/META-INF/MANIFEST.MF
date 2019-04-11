@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+<<<<<<< HEAD
+Built-By: nache
+Build-Jdk: 1.8.0_201
+=======
+Built-By: danicri
+Build-Jdk: 10.0.2
+>>>>>>> b5dee4ca53bbca2b30b5faa3b62c7c2e4b1c10ef
+Created-By: Maven Integration for Eclipse
+
