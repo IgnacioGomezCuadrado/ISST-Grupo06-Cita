@@ -20,7 +20,7 @@ public class Medico implements Serializable {
 	private Especialidad especialidad;
 	@Id
 	private String email;
-	@OneToMany(mappedBy = "medico", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "medico", fetch = FetchType.LAZY)
 	private Collection<HorarioConsulta> horarioConsulta;
 	@OneToMany(mappedBy = "medico", fetch = FetchType.EAGER)
 	private Collection<Cita> citas;

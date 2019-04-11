@@ -3,6 +3,7 @@ package es.upm.dit.isst.grupo06.cita.servlets;
 import java.io.IOException;
 import java.sql.Time;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collection;
@@ -48,7 +49,12 @@ public class HorarioServlet extends HttpServlet {
 		req.getSession().setAttribute("medico", medico);
 
 		// Creamos un objeto fecha con el string pasado como parámetro
-		Date fecha = new SimpleDateFormat("dd/MM/yyyy").parse(fechaString);
+		Date fecha = null;
+		try {
+			fecha = new SimpleDateFormat("dd/MM/yyyy").parse(fechaString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 
 		// Sacamos el día de la semana (L,M,X...) que es la fecha elegida
 //		Calendar c = Calendar.getInstance();
@@ -100,7 +106,8 @@ public class HorarioServlet extends HttpServlet {
 
 		// Sacamos las citas del medico ese día
 		CitaDAO citadao = CitaDAOImplementation.getInstance();
-		Collection<Cita> citasMedico = citadao.getCitasDelDia(medico.getEmail(), fecha);
+		java.sql.Date fechaSql = new java.sql.Date(fecha.getTime());
+		Collection<Cita> citasMedico = citadao.getCitasDelDia(medico, fechaSql);
 		
 		// Formato para pasar de Time a un String tipo HH:mm
 		DateFormat formatoHora = new SimpleDateFormat("HH:mm");

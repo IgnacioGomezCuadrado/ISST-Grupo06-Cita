@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.upm.dit.isst.webLab.dao.PacienteDAO;
-import es.upm.dit.isst.webLab.dao.PacienteDAOImplementation;
-import es.upm.dit.isst.webLab.model.Paciente;
 
 @WebServlet ("/ResetPasswordServlet")
 public class ResetPasswordServlet extends HttpServlet {
