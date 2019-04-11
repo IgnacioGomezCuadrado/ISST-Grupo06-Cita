@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import es.upm.dit.isst.grupo06.cita.dao.EspecialidadDAO;
+import es.upm.dit.isst.grupo06.cita.dao.EspecialidadDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.model.Especialidad;
+
 
 @WebServlet("/DoctoresEspecialidadServlet")
 public class DoctoresEspecialidadServlet extends HttpServlet {

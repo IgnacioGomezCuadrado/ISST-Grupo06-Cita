@@ -17,8 +17,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import es.upm.dit.isst.grupo06.cita.dao.CitaDAO;
+import es.upm.dit.isst.grupo06.cita.dao.CitaDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.dao.MedicoDAO;
+import es.upm.dit.isst.grupo06.cita.dao.MedicoDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.HorarioConsulta;
+import es.upm.dit.isst.grupo06.cita.model.Medico;
 
 /**
  * Servlet implementation class HorarioServlet
@@ -46,21 +51,21 @@ public class HorarioServlet extends HttpServlet {
 		Date fecha = new SimpleDateFormat("dd/MM/yyyy").parse(fechaString);
 
 		// Sacamos el día de la semana (L,M,X...) que es la fecha elegida
-		Calendar c = Calendar.getInstance();
-		c.setTime(fecha);
-		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK); // 1: Domingo ... 7:Sabado
+//		Calendar c = Calendar.getInstance();
+//		c.setTime(fecha);
+//		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK); // 1: Domingo ... 7:Sabado
 
 		// Sacamos la collection de horarios del medico (uno por cada día de la semana)
-		Collection<HorarioConsulta> horariosConsulta = medico.getHorarioConsulta();
+//		Collection<HorarioConsulta> horariosConsulta = medico.getHorarioConsulta();
 
 		// Buscamos el horario correspondiente al día de la semana de la fecha elegida
 		// Ej: Si esa fecha cae en lunes, buscamos el horario de los lunes del medico
-		HorarioConsulta horMedDiaElegido = null;
-		for (HorarioConsulta horCon : horariosConsulta) {
-			if (horCon.getDiaSemana() == dayOfWeek) {
-				horMedDiaElegido = horCon;
-			}
-		}
+//		HorarioConsulta horMedDiaElegido = null;
+//		for (HorarioConsulta horCon : horariosConsulta) {
+//			if (horCon.getDiaSemana() == dayOfWeek) {
+//				horMedDiaElegido = horCon;
+//			}
+//		}
 
 		/*
 		 * Diccionario clave-valor con el horario general de citas.
@@ -69,24 +74,37 @@ public class HorarioServlet extends HttpServlet {
 		 * 					 false si está libre.
 		 */
 		Map<String, Boolean> horasCitas = new HashMap<String, Boolean>();
+		horasCitas.put("08:00", false);
+		horasCitas.put("08:30", false);
+		horasCitas.put("09:00", false);
+		horasCitas.put("09:30", false);
+		horasCitas.put("10:00", false);
+		horasCitas.put("10:30", false);
+		horasCitas.put("11:00", false);
+		horasCitas.put("11:30", false);
+		horasCitas.put("12:00", false);
+		horasCitas.put("12:30", false);
+		horasCitas.put("13:00", false);
+		horasCitas.put("13:30", false);
+		horasCitas.put("14:00", false);
 
-		// Formato para pasar de Time a un String tipo HH:mm
-		DateFormat formatoHora = new SimpleDateFormat("HH:mm");
-
-		Time hora = horMedDiaElegido.getHoraComienzoM(); // Hora inicial
-		c.setTime(hora);
-		int duracionCita = 30; // Duración de las citas en minutos
-
-		while (c.getTime() < horMedDiaElegido.getHoraFinalM()) { // Mientras no llegue la hora final
-			String horaStr = formatoHora.format(hora.getTime());
-			horasCitas.put(horaStr, false); // Añadimos la hora como vacía
-			c.add(Calendar.MINUTE, duracionCita); // Y sumamos la duración de la cita
-		}
+//		Time hora = horMedDiaElegido.getHoraComienzoM(); // Hora inicial
+//		c.setTime(hora);
+//		int duracionCita = 30; // Duración de las citas en minutos
+//
+//		while (c.getTime() < horMedDiaElegido.getHoraFinM()) { // Mientras no llegue la hora final
+//			String horaStr = formatoHora.format(hora.getTime());
+//			horasCitas.put(horaStr, false); // Añadimos la hora como vacía
+//			c.add(Calendar.MINUTE, duracionCita); // Y sumamos la duración de la cita
+//		}
 
 		// Sacamos las citas del medico ese día
 		CitaDAO citadao = CitaDAOImplementation.getInstance();
-		Collection<Cita> citasMedico = citadao.getCitasDelDia(medico.getId(), fecha);
-
+		Collection<Cita> citasMedico = citadao.getCitasDelDia(medico.getEmail(), fecha);
+		
+		// Formato para pasar de Time a un String tipo HH:mm
+		DateFormat formatoHora = new SimpleDateFormat("HH:mm");
+		
 		// Marcamos las horas en las que ya hay cita como ocupadas
 		for (Cita cita : citasMedico) {
 			horasCitas.put(formatoHora.format(cita.getHora().getTime()), true);

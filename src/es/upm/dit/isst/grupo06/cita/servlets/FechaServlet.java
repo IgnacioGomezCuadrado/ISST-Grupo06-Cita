@@ -1,13 +1,16 @@
 package es.upm.dit.isst.grupo06.cita.servlets;
 
 import java.io.IOException;
-import java.util.Collection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import es.upm.dit.isst.grupo06.cita.dao.MedicoDAO;
+import es.upm.dit.isst.grupo06.cita.dao.MedicoDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.model.Medico;
 
 @WebServlet("/FechaServlet")
 public class FechaServlet extends HttpServlet {
