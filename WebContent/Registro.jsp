@@ -6,7 +6,7 @@
 			<div class="col-md-12 titulo">
 				<h1>Registro de Pacientes</h1>
 			</div>
-			<form action="RegistroPacienteServlet" method="post">
+			<form action="RegistroServlet" method="post">
 				<p>
 					Nombre: <input type="text" name="nombre" />
 				</p>
