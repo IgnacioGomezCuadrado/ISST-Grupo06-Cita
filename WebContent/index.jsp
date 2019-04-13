@@ -33,8 +33,8 @@
 	            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
 	            <button class="btn btn-lg btn-block btn-signin" type="submit">&nbsp Entrar</button>
 	        </form><!-- /form -->
-	        <a href="#" class="sign-up text-center">Registrarse en la plataforma</a>
-	        <a href="#" class="forgot-password text-center">¿Olvidó la Contraseña?</a>
+	        <a href="Registro.jsp" class="sign-up text-center">Registrarse en la plataforma</a>
+	        <a href="ResetPassword.jsp" class="forgot-password text-center">¿Olvidó la Contraseña?</a>
 	         
     	</div>
 			

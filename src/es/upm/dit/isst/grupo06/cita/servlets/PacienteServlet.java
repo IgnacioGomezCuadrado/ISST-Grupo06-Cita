@@ -24,7 +24,7 @@ public class PacienteServlet extends HttpServlet {
 
 		req.getSession().setAttribute("paciente", paciente);
 
-		getServletContext().getRequestDispatcher("/PacienteView.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/ListaCitasPaciente.jsp").forward(req, resp);
 	}
 
 }
