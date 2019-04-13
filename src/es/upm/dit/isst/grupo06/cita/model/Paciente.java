@@ -15,9 +15,11 @@ public class Paciente implements Serializable {
 	private String nombre;
 	private String apellidos;
 	private String password;
-	@Id
 	private String dni;
+	
+	@Id
 	private String email;
+	
 	private int telefono;
 	private String sociedadMedica;
 	private String tarjetaSanitaria;
