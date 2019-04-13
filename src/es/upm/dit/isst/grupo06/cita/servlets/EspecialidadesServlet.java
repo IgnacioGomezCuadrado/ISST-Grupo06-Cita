@@ -20,10 +20,10 @@ public class EspecialidadesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		EspecialidadDAO espdao = EspecialidadDAOImplementation.getInstance();
-		Collection<Especialidad> especialidades = espdao.readAll();
+		//EspecialidadDAO espdao = EspecialidadDAOImplementation.getInstance();
+		//Collection<Especialidad> especialidades = espdao.readAll();
 
-		req.getSession().setAttribute("especialidades", especialidades);
+		//req.getSession().setAttribute("especialidades", especialidades);
 
 		getServletContext().getRequestDispatcher("/SeleccionEspecialidadPaciente.jsp").forward(req, resp);
 	}

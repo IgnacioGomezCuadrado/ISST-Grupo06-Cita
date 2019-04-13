@@ -1,7 +1,8 @@
 <%@tag description="User Status Bar" pageEncoding="UTF-8"%>
 
-    <nav class="col-md-2 d-none d-md-block sidebar">
+    <nav class="col-3 col-sm-3 col-md-3 col-lg-2  d-sm-block sidebar">
       <div class="sidebar-sticky">
+       <h6 id="bienvenida" class="text-center">Hola, Nombre</h6>
        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           CITAS MÉDICAS
         </h6>
@@ -43,7 +44,7 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a id="passwordchange"class="nav-link" href="#">
               <i class="fas fa-lock mr-2"></i>
               Cambiar Contraseña
             </a>

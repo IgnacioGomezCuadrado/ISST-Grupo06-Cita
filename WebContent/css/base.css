@@ -20,8 +20,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f9fe', end
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, label {
  font-weight: 500;
+ font-family:'Montserrat';
 }
 
 ::selection{
@@ -29,6 +30,11 @@ h1, h2, h3, h4, h5, h6 {
 	color:white;
 }
 
+/*@media(max-height:930px){
+	.cuerpo{
+	  padding-top:60px;
+	}
+} */
 /*****Page titles (H1) ****/
 
 h1{
@@ -53,8 +59,9 @@ header .container-fluid{
 
 }
 
-header h1{
+header h3#brand{
 	font-family:'Oswald';
+	font-weight: 500;
 	color:#e81324;
 	font-size:3.5rem;
 	
@@ -71,6 +78,20 @@ header h3{
 	font-size:14px;
 	color:#e81324;
 	font-weight:600;
+    }
+    
+    header h3#brand{
+     font-size:2.5rem;
+    }
+}
+
+@media(max-width:520px){
+	header h3{
+	font-size:12px;
+    }
+    
+    header h3#brand{
+     font-size:2rem;
     }
 }
 
@@ -89,6 +110,7 @@ footer p {
 	font-weight:500;
 	margin:0;
 }
+
 
 
 

@@ -1,6 +1,6 @@
 <%@tag description="Footer Template" pageEncoding="UTF-8"%>
 
-<footer class="footer mt-auto">
+<footer id="footer" class="footer mt-auto">
   
   <div class="container-fluid">
     

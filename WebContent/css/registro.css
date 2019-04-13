@@ -1,0 +1,175 @@
+/********************************
+*********** REGISTRATION CSS **********
+********************************/
+
+
+.card-container.card {
+    max-width: 600px;
+    padding: 40px 40px;
+}
+
+
+button.btn.btn-lg.btn-block.btn-signin {
+    margin-top:30px;
+    border: 1px solid black;
+}
+
+
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.form-signin input {
+    direction: ltr;
+    height: 30px;
+    font-size: 14px;
+    color:black;
+    width:90%;
+}
+
+
+
+.form-signin label {
+   font-weight:900;
+   
+}
+
+select#inputSociedad {
+    font-size: 10px;
+    height:30px;
+    width:90%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.customformfield{
+	display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.invalid-feedback{
+	font-weight:500;
+}
+
+.valid{
+	border-color: #28a745;
+    padding-right: calc(1.5em + .75rem);
+    background-image: url('../images/validation/check-solid.svg');
+    background-repeat: no-repeat;
+    background-position: center right calc(.6em + .1875rem);
+    background-size: calc(0.5em + .5rem) calc(.6em + .45rem);
+}
+
+.invalid{
+	border-color: #dc3545;
+    padding-right: calc(1.5em + .75rem);
+    background-image: url('../images/validation/times-solid.svg') ;
+    background-repeat: no-repeat;
+    background-position: center right calc(.6em + .1875rem);
+    background-size: calc(0.3em + .35rem) calc(.45em + .45rem);
+}
+
+.invalid-check{
+	visibility:hidden;
+	height:0;
+}
+
+.invalid-check.visible{
+	visibility:visible;
+	height:24px;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+    font-weight: 500;
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-weight:300;
+  font-style:italic;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   font-weight:300;
+   font-style:italic;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ font-weight:300;
+ font-style:italic;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+	color:white;
+     background-color: rgba(232,19,36,0.8);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgba(232,19,36,1);
+    margin-top:30px;
+
+}
+
+
+
+.section-title h1 {
+    font-size: 3em;
+    color: #e81324;
+    position: relative;
+    margin: 0 0 50px 0;
+    padding-bottom: 15px;
+}
+

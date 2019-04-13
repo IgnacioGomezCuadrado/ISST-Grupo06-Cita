@@ -12,12 +12,28 @@
 	<jsp:attribute name="head">
 		<title>Citas Pendientes - DocApp</title>
 	</jsp:attribute>
+	
 	<jsp:body>
 	   
 	    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom subemargen">
 		        <h1>Selección de Especialidad</h1>
 		</div>
             <p>Elije la especialidad médica deseada.</p>
+        <div class="row">
+	        
+	        <!-- caja especialidad -->
+	        <a href="../diagnostico-por-imagen">
+	        <div class="col-md-3 text-center">
+	            <div class="mz-module">
+	                <div class="mz-module-about">
+	                    <h3>Cardiología</h3>
+	                    <div class="separador-horizontal"></div>
+	                </div>
+	            </div>
+	        </div>
+	        </a>
+	        <!-- / caja especialidad -->
+        </div>
 
 	</jsp:body>
 
