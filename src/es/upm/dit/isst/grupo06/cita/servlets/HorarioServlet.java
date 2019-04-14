@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -34,19 +35,16 @@ public class HorarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String idMedico = req.getParameter("medico");
-		String fechaString = req.getParameter("date");
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String fechaString = req.getParameter("fecha");
+		System.out.println(fechaString);
 
-		// Pasamos la fecha a la vista
-		req.getSession().setAttribute("date", fechaString);
+		// Establecemos como atributo fecha la seleccionada por el paciente
+		req.getSession().setAttribute("fecha", fechaString);
 
-		// Buscamos el medico elegido en la BD
-		MedicoDAO medicodao = MedicoDAOImplementation.getInstance();
-		Medico medico = medicodao.read(idMedico);
+		// Recuperamos el medico elegido
+		Medico medico = (Medico) req.getSession().getAttribute("medico");
 
-		// Pasamos el médico a la vista
-		req.getSession().setAttribute("medico", medico);
 
 		// Creamos un objeto fecha con el string pasado como parámetro
 		Date fecha = null;
@@ -120,7 +118,7 @@ public class HorarioServlet extends HttpServlet {
 		// Pasamos el horario a la vista
 		req.getSession().setAttribute("horario", horasCitas);
 
-		getServletContext().getRequestDispatcher("/HorarioView.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/SeleccionHoraPaciente.jsp").forward(req, resp);
 	}
 
 }

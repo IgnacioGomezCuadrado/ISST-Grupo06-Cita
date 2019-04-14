@@ -18,8 +18,7 @@
 	    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom subemargen">
 		        <h1>Selección de Doctor</h1>
 		</div>
-		    <h2 class="text-center">${especialidad.nombre}</h2> <%--Este título debe de ser el nombre de la especialidad elegida, hay que
-		    pasar el parámetro --%>
+		    <h2 class="text-center">${especialidad.nombre}</h2>
             <p>Haz click en los doctores para comprobar su disponibilidad.</p>
         <div class="row doctores">
 	    

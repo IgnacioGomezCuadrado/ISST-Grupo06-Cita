@@ -17,8 +17,14 @@
 	
 	<jsp:attribute name="scripts">
 		<script>
-		var today = new Date().toISOString().split('T')[0];
-		document.getElementsByName("fechacita")[0].setAttribute('min', today);
+			var today = new Date().toISOString().split('T')[0];
+			document.getElementsByName("fechacita")[0].setAttribute('min', today);
+		</script>
+		<script>
+    		document.getElementById("selecFecha").onclick = function () {
+    		var fechacita = document.getElementById("fechacita").value;
+        	window.location.href = "HorarioServlet?fecha=" + fechacita;
+    		};
 		</script>
 	</jsp:attribute>
 	
@@ -28,19 +34,18 @@
 	    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom subemargen">
 		        <h1>Selección de Fecha de Cita</h1>
 		</div>
-		    <h2 class="text-center">DOCTOR SELECCIONADO</h2> <%--Este título debe de ser el nombre del doctor de la especialidad elegida, hay que
-		    pasar el parámetro --%>
-            <p>Comprueba la disponibilidad del doctor y elije fecha y hora para la cita.</p>
+		    <h2 class="text-center">Doctor ${medico.apellidos}</h2>
+            <p>Comienza eligiendo la fecha para la cita.</p>
         
         	  <div class="fichadoctor">
         	  	<div class="row">       	  	
         	  		<div class="col-6">
-        	  			<h4>Nombre del doctor</h4>
+        	  			<h4>Dr. ${medico.nombre} ${medico.apellidos}</h4>
         	  			<i class="fas fa-user-md"></i>
         	  			
-        	  			<p><i>Especialidad del doctor...</i></p>
-        	  			<button class="btn btn-lg btn-block btn-cita" type="submit">Confirmar Cita</button>
-        	  		
+        	  			<p><i>${medico.especialidad.nombre}</i></p>
+        	  			
+        	  			<button class="btn btn-lg btn-block btn-cita" id="selecFecha">Seleccionar fecha</button>
         	  		</div>
         	  		<div class="col-6">
         	  			 <div class="form-row mt-1 mb-2 pb-4 border-bottom">
@@ -50,10 +55,10 @@
 					             </div>
 					     </div>
 					     <div class="form-row mt-1 mb-2 pb-4">
-					             <div class="col-12">
+					             <div class="col-12 text-muted">
 					                <label for="horacita">Selecciona hora:</label>
-					                <select name="horacita" id="horacita" class="form-control">
-				        				<option value="" selected>Selecciona...</option>
+					                <select disabled name="horacita" id="horacita" class="form-control">
+				        				<option value="" selected>Antes debe seleccionar una fecha</option>
 				                    </select>
 
 					             </div>

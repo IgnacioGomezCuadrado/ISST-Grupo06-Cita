@@ -17,14 +17,14 @@ public class FechaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String idMedico = req.getParameter("medico");
+		String idMedico = req.getParameter("med");
 		
 		MedicoDAO meddao = MedicoDAOImplementation.getInstance();
 		Medico medico = meddao.read(idMedico);
 
 		req.getSession().setAttribute("medico", medico);
 
-		getServletContext().getRequestDispatcher("/FechaView.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/SeleccionFechaPaciente.jsp").forward(req, resp);
 	}
 
 }
