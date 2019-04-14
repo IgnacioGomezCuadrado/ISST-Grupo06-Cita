@@ -11,12 +11,9 @@
 <t:pacientepagestemplate>
 
 	<jsp:attribute name="head">
-		<title>Elegir Especialidad - DocApp</title>
+		<title>Citas Pendientes - DocApp</title>
 	</jsp:attribute>
-		<jsp:attribute name="scripts">
-
-		<script src="${pageContext.request.contextPath}/js/theme_js.js"></script>
-	</jsp:attribute>
+		
 	
 	<jsp:body>
 	   

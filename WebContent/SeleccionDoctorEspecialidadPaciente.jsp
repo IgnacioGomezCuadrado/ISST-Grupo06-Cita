@@ -10,24 +10,36 @@
 <t:pacientepagestemplate>
 
 	<jsp:attribute name="head">
-		<title>Selección Especialidad - DocApp</title>
+		<title>Selección Doctor - DocApp</title>
 	</jsp:attribute>
 	
 	<jsp:body>
 	   
 	    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom subemargen">
-		        <h1>Selección de Especialidad</h1>
+		        <h1>Selección de Doctor</h1>
 		</div>
-            <p>Elije la especialidad médica de tu cita.</p>
-        <div class="row especialidades">
+		    <h2 class="text-center">ESPECIALIDAD SELECCIONADA</h2> <%--Este título debe de ser el nombre de la especialidad elegida, hay que
+		    pasar el parámetro --%>
+            <p>Haz click en los doctores para comprobar su disponibilidad.</p>
+        <div class="row doctores">
 	    
-	        <!-- caja especialidad -->
+	        <!-- caja doctores -->
 	         
 	         <div class="col-lg-3 col-md-4">
-	           <a href="DoctoresEspecialidadServlet">
+	           <a href="#">
                       <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
+                          <div class="separador-horizontal"></div>
+                      </div>
+               </a>
+             </div>
+            
+            <div class="col-lg-3 col-md-4">
+	           <a href="#">
+                      <div class="box">
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                </a>
@@ -35,8 +47,8 @@
              <div class="col-lg-3 col-md-4">
 	           <a href="#">
                       <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                </a>
@@ -44,8 +56,8 @@
              <div class="col-lg-3 col-md-4">
 	           <a href="#">
                       <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                </a>
@@ -53,8 +65,8 @@
              <div class="col-lg-3 col-md-4">
 	           <a href="#">
                       <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                </a>
@@ -62,8 +74,8 @@
              <div class="col-lg-3 col-md-4">
 	           <a href="#">
                       <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                </a>
@@ -71,8 +83,8 @@
              <div class="col-lg-3 col-md-4">
 	           <a href="#">
                       <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                </a>
@@ -80,22 +92,13 @@
              <div class="col-lg-3 col-md-4">
 	           <a href="#">
                       <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
+                          <i class="fas fa-user-md"></i>
+                          <h4 class="title">Dr. Mengueche</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                </a>
              </div>
-             <div class="col-lg-3 col-md-4">
-	           <a href="#">
-                      <div class="box">
-                          <div class="img-especialidad"><img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg"></div>
-                          <h4 class="title">Cardiología</h4>
-                          <div class="separador-horizontal"></div>
-                      </div>
-               </a>
-             </div> 
-	        <!-- / caja especialidad -->
+	        <!-- / caja doctores -->
         
         
         </div>

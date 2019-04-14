@@ -48,6 +48,15 @@ var logViewport = function () {
 	    
 };
 
+var extendViewport = function (footer) {
+	document.documentElement.className="";
+	document.documentElement.style.height="inherit";
+	document.getElementsByTagName("BODY")[0].className = "";
+	document.getElementsByTagName("BODY")[0].style.height = "inherit";
+	console.log("vieport extended");
+	  		    
+	};
+
 logViewport();
 
 			
