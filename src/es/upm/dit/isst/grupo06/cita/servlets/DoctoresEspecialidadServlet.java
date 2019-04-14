@@ -18,14 +18,14 @@ public class DoctoresEspecialidadServlet extends HttpServlet {
        
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String idEsp = req.getParameter("especialidad");
+		/*String idEsp = req.getParameter("especialidad");
 
 		EspecialidadDAO espdao = EspecialidadDAOImplementation.getInstance();
 		Especialidad especialidad = espdao.read(idEsp);
 
-		req.getSession().setAttribute("especialidad", especialidad);
+		req.getSession().setAttribute("especialidad", especialidad); */
 
-		getServletContext().getRequestDispatcher("/DoctoresEspecialidadView.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/SeleccionDoctorEspecialidadPaciente.jsp").forward(req, resp);
 	}
 
 }

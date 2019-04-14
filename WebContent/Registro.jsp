@@ -14,7 +14,12 @@
 	
 	<jsp:attribute name="scripts">
 		<script>
-			(function() {
+		     
+		     document.getElementsByTagName("HEADER")[0].className = "";
+		
+		     footer = document.querySelector('#footer');
+			
+		     (function() {
 			  'use strict';
 			  window.addEventListener('load', function() {
 			    // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -35,6 +40,7 @@
 				            if(!emails_equal){
 				            	document.getElementById('inputEmailCheck').className += " invalid";
 				            	document.getElementById('inputEmailCheck').nextElementSibling.className += " visible";
+				            	
 				            	}
 			        	    if(!passwords_equal){
 			        	    	document.getElementById('inputPasswordCheck').className += " invalid";
@@ -42,6 +48,8 @@
 			        	    	}
 				            event.preventDefault();
 				            event.stopPropagation();
+				            extendViewport(footer);
+				            
 				        }
 				        else{
 				        	if(!emails_equal || !passwords_equal){
@@ -55,6 +63,8 @@
 				        		}
 				        		event.preventDefault();
 						        event.stopPropagation();
+						        extendViewport(footer);
+						        
 				        		
 				        	}
 				        }
