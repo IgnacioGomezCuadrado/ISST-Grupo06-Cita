@@ -14,7 +14,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="EspecialidadServlet">
+            <a class="nav-link" href="EspecialidadesServlet">
              <i class="fas fa-plus-circle mr-2"></i>
               Pedir Nueva Cita
             </a>

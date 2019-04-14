@@ -26,7 +26,7 @@
 	        
 	        <c:forEach items="${especialidades}" var="esp">
 				<div class="col-lg-3 col-md-4">
-	           		<a href="DoctoresEspecialidadServlet?especialidad=${esp.nombre }">
+	           		<a href="DoctoresEspecialidadServlet?esp=${esp.id }">
                 		<div class="box">
                 			<div class="img-especialidad">
 								<img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg">

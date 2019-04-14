@@ -8,7 +8,7 @@ public interface EspecialidadDAO {
 
 	public void create(Especialidad especialidad);
 
-	public Especialidad read(String nombre);
+	public Especialidad read(int id);
 
 	public void update(Especialidad especialidad);
 

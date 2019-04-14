@@ -13,7 +13,7 @@ import es.upm.dit.isst.grupo06.cita.dao.EspecialidadDAO;
 import es.upm.dit.isst.grupo06.cita.dao.EspecialidadDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Especialidad;
 
-@WebServlet("/EspecialidadServlet")
+@WebServlet("/EspecialidadesServlet")
 public class EspecialidadesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

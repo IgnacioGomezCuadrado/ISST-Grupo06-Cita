@@ -35,12 +35,12 @@ public class EspecialidadDAOImplementation implements EspecialidadDAO{
 	}
 
 	@Override
-	public Especialidad read(String nombre) {
+	public Especialidad read(int id) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
 			// operaciones
-			Especialidad especialidad = session.get(Especialidad.class, nombre);
+			Especialidad especialidad = session.get(Especialidad.class, id);
 			session.getTransaction().commit();
 			return especialidad;
 		} catch (Exception e) {

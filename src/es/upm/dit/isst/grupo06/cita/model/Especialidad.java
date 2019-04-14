@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -13,12 +15,20 @@ public class Especialidad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO) // Auto incremento
+	private int id; //Dejar en null cuando vayas a crear una especialidad
+	
 	private String nombre;
+	
 	@OneToMany(mappedBy = "especialidad", fetch = FetchType.EAGER)
 	private Collection<Medico> medicosEsp;
 
 	public Especialidad() {
 
+	}
+	
+	public int getId() {
+		return id;
 	}
 
 	public String getNombre() {
