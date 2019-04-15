@@ -1,7 +1,7 @@
 package es.upm.dit.isst.grupo06.cita.model;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +21,7 @@ public class Especialidad implements Serializable {
 	private String nombre;
 	
 	@OneToMany(mappedBy = "especialidad", fetch = FetchType.EAGER)
-	private Collection<Medico> medicosEsp;
+	private Set<Medico> medicosEsp;
 
 	public Especialidad() {
 
@@ -39,11 +39,11 @@ public class Especialidad implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public Collection<Medico> getMedicosEsp() {
+	public Set<Medico> getMedicosEsp() {
 		return medicosEsp;
 	}
 
-	public void setMedicosEsp(Collection<Medico> medicosEsp) {
+	public void setMedicosEsp(Set<Medico> medicosEsp) {
 		this.medicosEsp = medicosEsp;
 	}
 

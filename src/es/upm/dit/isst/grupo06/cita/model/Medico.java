@@ -16,12 +16,16 @@ public class Medico implements Serializable {
 	private String nombre;
 	private String apellidos;
 	private String password;
+	
 	@ManyToOne
 	private Especialidad especialidad;
+	
 	@Id
 	private String email;
+	
 	@OneToMany(mappedBy = "medico", fetch = FetchType.LAZY)
 	private Collection<HorarioConsulta> horarioConsulta;
+	
 	@OneToMany(mappedBy = "medico", fetch = FetchType.EAGER)
 	private Collection<Cita> citas;
 
