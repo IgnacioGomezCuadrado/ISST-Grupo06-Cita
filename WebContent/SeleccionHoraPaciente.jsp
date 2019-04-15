@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 
  
@@ -17,8 +18,7 @@
 	
 	<jsp:attribute name="scripts">
 		<script>
-		var today = new Date().toISOString().split('T')[0];
-		document.getElementsByName("fechacita")[0].setAttribute('min', today);
+		
 		</script>
 	</jsp:attribute>
 	
@@ -29,7 +29,7 @@
 		        <h1>Selección de Fecha de Cita</h1>
 		</div>
 		    <h2 class="text-center">Doctor ${medico.apellidos}</h2>
-            <p>Comprueba la disponibilidad del doctor y elije fecha y hora para la cita.</p>
+            <p>Ahora elige una hora para la cita.</p>
         
         	  <div class="fichadoctor">
         	  	<div class="row">       	  	
@@ -43,9 +43,9 @@
         	  		</div>
         	  		<div class="col-6">
         	  			 <div class="form-row mt-1 mb-2 pb-4 border-bottom">
-					             <div class="col-12">
+					             <div class="col-12 text-muted">
 					                <label for="fechacita">Selecciona fecha:</label>
-					                <input type="date" class="form-control" name="fechacita" id="fechacita">
+					                <input disabled type="date" class="form-control" name="fechacita" id="fechacita" value="<fmt:formatDate pattern = "yyyy-MM-dd" value = "${fecha}" />">
 					             </div>
 					     </div>
 					     <div class="form-row mt-1 mb-2 pb-4">
@@ -53,6 +53,11 @@
 					                <label for="horacita">Selecciona hora:</label>
 					                <select name="horacita" id="horacita" class="form-control">
 				        				<option value="" selected>Selecciona...</option>
+				        				<c:forEach items="${horario}" var="hora">
+				        					<c:if test="${!hora.value}">
+				        						<option value="${hora.key}" >${hora.key}</option>
+				        					</c:if>
+				        				</c:forEach>
 				                    </select>
 
 					             </div>

@@ -1,6 +1,6 @@
 package es.upm.dit.isst.grupo06.cita.dao;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Collection;
 
 import es.upm.dit.isst.grupo06.cita.model.Cita;
