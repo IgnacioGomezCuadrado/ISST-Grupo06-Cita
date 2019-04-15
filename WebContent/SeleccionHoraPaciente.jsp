@@ -18,7 +18,10 @@
 	
 	<jsp:attribute name="scripts">
 		<script>
-		
+			document.getElementById("confCita").onclick = function () {
+    			var horacita = document.getElementById("horacita").value;
+        		window.location.href = "GuardarCitaServlet?hora=" + horacita;
+    		};
 		</script>
 	</jsp:attribute>
 	
@@ -38,7 +41,7 @@
         	  			<i class="fas fa-user-md"></i>
         	  			
         	  			<p><i>${medico.especialidad.nombre}</i></p>
-        	  			<button class="btn btn-lg btn-block btn-cita" type="submit">Confirmar Cita</button>
+        	  			<button class="btn btn-lg btn-block btn-cita" id="confCita">Confirmar Cita</button>
         	  		
         	  		</div>
         	  		<div class="col-6">

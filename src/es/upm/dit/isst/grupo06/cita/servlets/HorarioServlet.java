@@ -29,13 +29,7 @@ public class HorarioServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String fechaStr = req.getParameter("fecha");
-		
-		// Establecemos la fecha elegida como atributo de la sesión
-		req.getSession().setAttribute("fechaStr", fechaStr);
-
-		// Recuperamos el medico elegido
-		Medico medico = (Medico) req.getSession().getAttribute("medico");
+		String fechaStr = req.getParameter("fecha");		
 
 		// Creamos un objeto fecha con el string pasado como parámetro
 		Date fecha = null;
@@ -96,7 +90,10 @@ public class HorarioServlet extends HttpServlet {
 //			horasCitas.put(horaStr, false); // Añadimos la hora como vacía
 //			c.add(Calendar.MINUTE, duracionCita); // Y sumamos la duración de la cita
 //		}
-
+		
+		// Recuperamos el medico elegido
+		Medico medico = (Medico) req.getSession().getAttribute("medico");
+		
 		// Sacamos las citas del medico ese día
 		CitaDAO citadao = CitaDAOImplementation.getInstance();
 		Collection<Cita> citasMedico = citadao.getCitasDelDia(medico, fecha);

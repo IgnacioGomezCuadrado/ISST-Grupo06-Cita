@@ -45,7 +45,7 @@
 				   <c:if test="${!empty paciente.citas }">
 					   <c:forEach items="${paciente.citas}" var="cita">
 							<tr>
-								<td>${cita.medico.especialidad }</td>
+								<td>${cita.medico.especialidad.nombre }</td>
 								<td>${cita.medico.nombre } ${cita.medico.apellidos }</td>
 								<td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${cita.fecha}" /></td>
 								<td><fmt:formatDate pattern = "HH:mm" value = "${cita.hora}" /></td>
