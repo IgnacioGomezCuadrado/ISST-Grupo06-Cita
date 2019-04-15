@@ -104,6 +104,8 @@ public class HorarioServlet extends HttpServlet {
 		// Marcamos las horas en las que ya hay cita como ocupadas
 		for (Cita cita : citasMedico) {
 			System.out.println(cita);
+			System.out.println(cita.getMedico().getApellidos());
+			System.out.println(formatoHora.format(cita.getHora().getTime()));
 			horasCitas.put(formatoHora.format(cita.getHora().getTime()), true);
 		}
 

@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.Time;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -13,13 +15,18 @@ public class Cita implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO) // Auto incremento
 	private int id;
+	
 	private Date fecha;
 	private Time hora;
+	
 	@ManyToOne
 	private Medico medico;
+	
 	@ManyToOne
 	private Paciente paciente;
+	
 	private boolean confirmada;
 	private boolean urgencia;
 	@ManyToOne
