@@ -8,7 +8,7 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="PacienteServlet?id=${paciente.email}">
              <i class="far fa-clock mr-2"></i>
               Citas Pendientes <span class="sr-only">(current)</span>
             </a>

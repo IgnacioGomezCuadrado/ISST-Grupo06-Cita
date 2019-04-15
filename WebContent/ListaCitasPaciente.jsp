@@ -50,7 +50,7 @@
 								<td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${cita.fecha}" /></td>
 								<td><fmt:formatDate pattern = "HH:mm" value = "${cita.hora}" /></td>
 								<td><button type="button" class="btn btn-info acciones-paciente">Modificar</button></td>
-								<td><button type="button" class="btn btn-info acciones-paciente">Cancelar</button></td>
+								<td><a href="BorrarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Cancelar</button></a></td>
 							</tr>
 						</c:forEach>
 				   </c:if>	
