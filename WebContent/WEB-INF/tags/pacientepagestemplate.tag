@@ -7,12 +7,12 @@
 <%@attribute name="footer" fragment="true" %>
 <%@attribute name="scripts" fragment="true" %>
 
-<%-- <shiro:guest> 
+ <shiro:guest> 
   <c:redirect url = "/"/>
- </shiro:guest> --%>
+ </shiro:guest> 
 
 
-<%--<shiro:user> --%>
+  <shiro:user>
 	<!DOCTYPE html>
 	<html lang="es" class="h-100">
 	   <head>
@@ -57,4 +57,4 @@
 			  
 			  
 			  	  
-<%--</shiro:user> --%>
+</shiro:user>
