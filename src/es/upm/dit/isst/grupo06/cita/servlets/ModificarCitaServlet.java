@@ -23,15 +23,17 @@ public class ModificarCitaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String idCita = req.getParameter("cita");
+		System.out.println(idCita);
 		
 		// Pedimos la cita en la base de datos
 		CitaDAO citdao = CitaDAOImplementation.getInstance();
 		Cita cita = citdao.read(Integer.parseInt(idCita));
 		
-		Paciente paciente = (Paciente) req.getSession().getAttribute("paciente");
+		req.getSession().setAttribute("modificando", true);
+		req.getSession().setAttribute("citaAModificar", cita);
 		
 		// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
-		resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());
+		resp.sendRedirect(req.getContextPath() + "/DoctoresEspecialidadServlet?esp=" + cita.getMedico().getEspecialidad().getId());
 	}
 
 
