@@ -102,5 +102,28 @@ public class PacienteDAOImplementation implements PacienteDAO{
 		}
 		return null;
 	}
+
+	@Override
+	public Collection<Paciente> read(String nombre, String apellidos) {
+		// TODO Auto-generated method stub
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			// operaciones
+			@SuppressWarnings("unchecked")
+			Collection<Paciente> pacientes = session.createQuery("from Pacientes p where p.nombre = :nombre and p.apellidos = :apellidos")  
+										.setParameter("nombre", nombre)
+										.setParameter("apellidos", apellidos) 
+										.list();
+			session.getTransaction().commit();
+			return pacientes;
+		} catch (Exception e) {
+			// manejar excepciones
+			System.out.println(e);
+		} finally {
+			session.close();
+		}
+		return null;
+	}
 	
 }

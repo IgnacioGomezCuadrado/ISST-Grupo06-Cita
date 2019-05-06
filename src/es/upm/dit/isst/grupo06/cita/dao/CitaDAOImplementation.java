@@ -6,7 +6,9 @@ import java.util.Collection;
 import org.hibernate.Session;
 
 import es.upm.dit.isst.grupo06.cita.model.Cita;
+import es.upm.dit.isst.grupo06.cita.model.Especialidad;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.Paciente;
 import es.upm.dit.isst.grupo06.cita.dao.SessionFactoryService;
 
 public class CitaDAOImplementation implements CitaDAO {
@@ -116,6 +118,32 @@ public class CitaDAOImplementation implements CitaDAO {
 			session.beginTransaction();
 			// operaciones
 			Collection<Cita> citas = session.createQuery("from Cita c where c.fecha = :fecha and c.medico = :medico")
+					.setParameter("fecha", fechaSql)
+					.setParameter("medico", medico)
+					.list();
+			session.getTransaction().commit();
+			return citas;
+		} catch (Exception e) {
+			// manejar excepciones
+			System.out.println(e);
+		} finally {
+			session.close();
+		}
+		return null;
+	}
+
+	@Override
+	public Collection<Cita> getCitasFormulario(String nombrePaciente, String apellidosPaciente, String nombreMedico, String apellidosMedico,
+			Especialidad especialidad, Date fecha) {
+		// TODO Auto-generated method stub Hacer bucle por los pacientes con ese nombre y los médicos, hacer todo con string y la sentencia sql like...
+		Session session = SessionFactoryService.get().openSession();
+		java.sql.Date fechaSql = new java.sql.Date(fecha.getTime()); // Pasar a fecha sql
+		try {
+			session.beginTransaction();
+			// operaciones
+			@SuppressWarnings("unchecked")
+			
+			Collection<Cita> citas = session.createQuery("from Cita c where c.fecha = IIF(ISNULL(:fecha, '') = '', :fecha, true) and c.medico = IIF(ISNULL(:medico, '') = '', :medico, true) and c.paciente = IIF(ISNULL(:paciente, '') = '', :paciente, true)")
 					.setParameter("fecha", fechaSql)
 					.setParameter("medico", medico)
 					.list();

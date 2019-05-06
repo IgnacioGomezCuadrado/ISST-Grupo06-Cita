@@ -9,6 +9,8 @@ public interface PacienteDAO {
 	public void create(Paciente paciente);
 
 	public Paciente read(String dni);
+	
+	public Collection<Paciente> read(String nombre, String apellidos);
 
 	public void update(Paciente paciente);
 

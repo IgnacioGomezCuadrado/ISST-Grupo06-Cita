@@ -1,0 +1,37 @@
+<%@tag description="Opciones de Especialidad" pageEncoding="UTF-8"%>
+<option value="1"> Oftalmologia</option>
+<option value="1320">Traumatologia</option>
+<option value="1848">ADMIRAL INSURANCE COMPANY LTD (TRAFICO)</option>
+<option value="25">AEGON ESPAÑA S.A.U. DE SEGUROS Y REASEGUROS</option>
+<option value="2504">AEROMEDICINA S.L.</option>
+<option value="33">AGRUPACIÓN AMCI DE SEGUROS Y REASEGUROS S.A.</option>
+<option value="3">AGRUPACION SANITARIA SEGUROS S.A.</option>
+<option value="1322">AICL (BALUMBA) -TRAFICO-</option>
+<option value="1341">AIOI MOTOR (TRAFICO)</option>
+<option value="2456">AKER PREVENCION DE RIESGOS LABORALES, S.L.</option>
+<option value="37">ALLIANZ COMPAÑÍA DE SEGUROS Y REASEGUROS, S.A.</option>
+<option value="1279">ALLIANZ SEGUROS S.A. (C. TRAFICO)</option>
+<option value="1281">AMA-AGRUP.MUTUAL ASEG.MUTUA SEG (TRAFICO)</option>
+<option value="2523">AMGEN SEGUROS GENERALES COMPAÑÍA DE SEG.</option>
+<option value="1323">AMIC SEGUROS GENERALES S.A ( TRAFICO)</option>
+<option value="1600">ASAT SALUD SL</option>
+<option value="1138">ASEFA S.A. SEGUROS Y REASEGUROS</option>
+<option value="1325">ASEFA S.A. SEGUROS Y REASEGUROS (TRAFICO)</option>
+<option value="1500">ASEGURADORES AGRUPADOS S.A.(TRAFICO)</option>
+<option value="59">ASEPEYO MUTUA COLABORADORA S.S. Nº151</option>
+<option value="1342">ASESORAMIENTO MEDICO SIGLO XXI (TRAF)</option>
+<option value="1398">ASESORAMIENTO MEDICO SIGLO XXI, S.L.</option>
+<option value="711">ASISA</option>
+<option value="2380">ASISTENCIA DENTAL EUROPEA S.A.U.</option>
+<option value="2507">ASNEF (ASOC. NAC. DE ESTABLEC. FIN. DE CRED.)</option>
+<option value="62">ASOCIACION EUROPEA COMPAÑÍA SEGUROS SA</option>
+<option value="2699">ASTESS PREVENCION, S.L.</option>
+<option value="1282">ATLANTIS COMPAÑIA DE SEGUROS Y REASEG, S.A. (TRAFI</option>
+<option value="810">ATLANTIS, COMPAÑÍA DE SEGUROS Y REASEGUROS S.A.</option>
+<option value="70">ATOCHA S.A. DE SEGUROS</option>
+<option value="1190">AVATA SUR S.L.U.</option>
+<option value="1137">AWP ASSISTANCE SERVICE ESPAÑA, S.A.U</option>
+<option value="1283">AXA SEGUROS GENERALES  (TRAFICO)</option>
+<option value="615">AXA SEGUROS GENERALES S.A. DE SEG Y REASEGUROS</option>
+<option value="2491">AXEL SPRINGER ESPAÑA S.A          </option>
+</select>

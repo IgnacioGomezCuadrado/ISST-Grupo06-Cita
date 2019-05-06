@@ -9,6 +9,8 @@ public interface MedicoDAO {
 	public void create(Medico medico);
 
 	public Medico read(String email);
+	
+	public Collection<Medico> read(String nombre, String apellidos);
 
 	public void update(Medico medico);
 

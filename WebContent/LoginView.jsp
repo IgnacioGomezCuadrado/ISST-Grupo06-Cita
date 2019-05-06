@@ -43,6 +43,8 @@
 							<a href="Registro.jsp">Regístrate</a>
 						</form>
 					</div>
+				</div>
+			</div>
 		</section>
 	</shiro:guest>
 
