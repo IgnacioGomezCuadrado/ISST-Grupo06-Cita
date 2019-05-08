@@ -21,7 +21,7 @@
 	  	</div>
 	  	
 	  	<div class="card card-container">
-	       <form class="form-signin" action="FormularioPAS" method="get">
+	       <form class="form-signin" action="FormularioServlet" method="post">
 	            
 	             <div class="form-row mt-1 mb-2 pb-4 border-bottom">
 	             <div class="col-sm-6">
@@ -62,6 +62,15 @@
 	                <label for="fecha">Fecha</label>
 	                <input type="date" name="fecha" id="inputFecha"
 							class="form-control" placeholder="Fecha de consulta" required>
+	             </div>
+	           </div> <!-- /row -->
+	           
+	           
+	            <div class="form-row mt-1 mb-2 pb-4 border-bottom">
+	             <div class="col-sm-6">
+	                <label for="consulta">Consulta</label>
+	                <select name="consulta" id="consulta" class="form-control">
+                    </select>
 	             </div>
 	           </div> <!-- /row -->
 	           
