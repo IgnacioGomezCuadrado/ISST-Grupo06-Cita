@@ -7,6 +7,7 @@ import org.hibernate.Session;
 
 import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.Paciente;
 import es.upm.dit.isst.grupo06.cita.dao.SessionFactoryService;
 
 public class CitaDAOImplementation implements CitaDAO {
@@ -116,9 +117,7 @@ public class CitaDAOImplementation implements CitaDAO {
 			session.beginTransaction();
 			// operaciones
 			Collection<Cita> citas = session.createQuery("from Cita c where c.fecha = :fecha and c.medico = :medico")
-					.setParameter("fecha", fechaSql)
-					.setParameter("medico", medico)
-					.list();
+					.setParameter("fecha", fechaSql).setParameter("medico", medico).list();
 			session.getTransaction().commit();
 			return citas;
 		} catch (Exception e) {
@@ -130,4 +129,138 @@ public class CitaDAOImplementation implements CitaDAO {
 		return null;
 	}
 
+	// Metodo para la consulta de citas por parte del PAS
+	@SuppressWarnings("unchecked")
+	@Override
+	public Collection<Cita> getCitasPAS(Paciente paciente, Medico medico, Date fecha) {
+		Session session = SessionFactoryService.get().openSession();
+		java.sql.Date fechaSql = null;
+		String pac;
+		String med;
+		String fec;
+		if (paciente != null) {
+			pac = "1";
+		} else {
+			pac = "0";
+		}
+		if (medico != null) {
+			med = "1";
+		} else {
+			med = "0";
+		}
+		if (fecha != null) {
+			fec = "1";
+			fechaSql = new java.sql.Date(fecha.getTime()); // Pasar a fecha sql
+		} else {
+			fec = "0";
+		}
+		switch (pac + med + fec) {
+		case "111":
+			try {
+				session.beginTransaction();
+				// operaciones
+				Collection<Cita> citas = session
+						.createQuery(
+								"from Cita c where c.paciente = :paciente and c.medico = :medico and c.fecha = :fecha")
+						.setParameter("paciente", paciente).setParameter("medico", medico)
+						.setParameter("fecha", fechaSql).list();
+				session.getTransaction().commit();
+				return citas;
+			} catch (Exception e) {
+				// manejar excepciones
+				System.out.println(e);
+			} finally {
+				session.close();
+			}
+		case "110":
+			try {
+				session.beginTransaction();
+				// operaciones
+				Collection<Cita> citas = session
+						.createQuery("from Cita c where c.paciente = :paciente and c.medico = :medico")
+						.setParameter("paciente", paciente).setParameter("medico", medico).list();
+				session.getTransaction().commit();
+				return citas;
+			} catch (Exception e) {
+				// manejar excepciones
+				System.out.println(e);
+			} finally {
+				session.close();
+			}
+		case "101":
+			try {
+				session.beginTransaction();
+				// operaciones
+				Collection<Cita> citas = session
+						.createQuery("from Cita c where c.paciente = :paciente and c.fecha = :fecha")
+						.setParameter("paciente", paciente).setParameter("fecha", fechaSql).list();
+				session.getTransaction().commit();
+				return citas;
+			} catch (Exception e) {
+				// manejar excepciones
+				System.out.println(e);
+			} finally {
+				session.close();
+			}
+		case "100":
+			try {
+				session.beginTransaction();
+				// operaciones
+				Collection<Cita> citas = session.createQuery("from Cita c where c.paciente = :paciente")
+						.setParameter("paciente", paciente).list();
+				session.getTransaction().commit();
+				return citas;
+			} catch (Exception e) {
+				// manejar excepciones
+				System.out.println(e);
+			} finally {
+				session.close();
+			}
+		case "011":
+			try {
+				session.beginTransaction();
+				// operaciones
+				Collection<Cita> citas = session
+						.createQuery("from Cita c where c.medico = :medico and c.fecha = :fecha")
+						.setParameter("medico", medico).setParameter("fecha", fechaSql).list();
+				session.getTransaction().commit();
+				return citas;
+			} catch (Exception e) {
+				// manejar excepciones
+				System.out.println(e);
+			} finally {
+				session.close();
+			}
+		case "010":
+			try {
+				session.beginTransaction();
+				// operaciones
+				Collection<Cita> citas = session.createQuery("from Cita c where c.medico = :medico")
+						.setParameter("medico", medico).list();
+				session.getTransaction().commit();
+				return citas;
+			} catch (Exception e) {
+				// manejar excepciones
+				System.out.println(e);
+			} finally {
+				session.close();
+			}
+		case "001":
+			try {
+				session.beginTransaction();
+				// operaciones
+				Collection<Cita> citas = session.createQuery("from Cita c where c.fecha = :fecha")
+						.setParameter("fecha", fechaSql).list();
+				session.getTransaction().commit();
+				return citas;
+			} catch (Exception e) {
+				// manejar excepciones
+				System.out.println(e);
+			} finally {
+				session.close();
+			}
+		default:
+			return null;
+		}
+	}
 }
