@@ -64,6 +64,11 @@ body {
   text-transform: uppercase;
 }
 
+.sidebar-type {
+  font-size: .6rem;
+  text-transform: uppercase;
+}
+
 ul.nav.flex-column {
     margin-left: 20px;
 }

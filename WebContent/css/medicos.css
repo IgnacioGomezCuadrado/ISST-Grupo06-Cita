@@ -1,0 +1,368 @@
+body {
+  font-size: .875rem;
+  background:white;
+}
+
+/*
+ * Sidebar
+ */
+
+#bienvenida{
+	font-weight:900;
+	font-style:italic;
+}
+.sidebar {
+  padding:0;
+  overflow:visible;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  background-image: linear-gradient(to bottom, #ffffff, #fafbff, #f4f8ff, #ebf5ff, #e1f3ff);
+}
+
+.sidebar-sticky {
+  padding:0;
+  overflow:visible;	
+  position: relative;
+  top: 0;
+  margin-top:90px;
+  height: calc(100vh - 50px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #e81324;
+}
+
+.sidebar .nav-link:hover {
+  font-weight: 500;
+  color: black;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link.active:hover {
+  color: black;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.sidebar-type {
+  font-size: .6rem;
+  text-transform: uppercase;
+}
+
+ul.nav.flex-column {
+    margin-left: 20px;
+}
+
+
+p{
+ font-weight:bold;
+}
+
+@media(max-width:860px){
+	.nav-link{
+	font-size:12px;
+	}
+}
+
+@media(max-width:770px){
+	#passwordchange{
+	font-size:10px;
+	}
+}
+
+
+/*
+ * Footer
+ */
+ 
+ footer .container-fluid {
+ position:absolute;
+ }
+ 
+ footer#footer {
+    height: 50px;
+}
+ 
+/*
+ * Citas Pendientes View
+ */
+main{
+   padding-bottom: 80px;
+}
+
+[role="main"] {
+    padding-top: 40px;
+}
+
+.table{
+	margin-bottom:0;
+}
+
+.table thead th{
+	color:#007bff;
+	border-top:0;
+}
+
+.table-responsive td {
+    color: black;
+    font-weight: 400;
+}
+
+.table-responsive{
+   margin-top:30px;
+   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+table thead{
+	/* background-color:#F2EFE9; */ 
+}
+table.table.table-striped.table-sm>tbody>tr:nth-child(odd)>td {
+    background-color: rgba(251, 255, 241, 0.6);
+    /*rgba(161, 181, 216, 0,7);*/
+}
+
+table.table.table-striped.table-sm>tbody>tr>td {
+
+    height:50px;
+}
+
+button.acciones-paciente{
+	height:30px;
+	font-size:12px;
+	padding-bottom:10px;
+	background-color: #e81324;
+	border-color: white;
+	color:white;
+}
+
+button.acciones-paciente:hover{
+	height: 30px;
+	font-size:12px;
+	background-color: #CF000B;
+	border-color: #CF000B;
+}
+
+@media(max-width:990px){
+	button.acciones-paciente{
+	height:90%;
+	font-size:10px;
+	
+	}
+	button.acciones-paciente:hover{
+	height: 80%;
+}
+	
+	
+}
+
+/**********************************
+***********************************
+****** Seleccion Especialidad*****/
+
+main div.d-flex + p{
+	margin-bottom:60px;
+}
+
+/*
+** Caja Especialidad **
+*/
+
+main a{
+	text-decoration:none;
+	
+}
+
+main a:hover{
+	text-decoration:none;
+	
+}
+
+
+main .row .box {
+  padding: 25px 20px;
+  padding-top:18px;
+  margin-bottom:20px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  height: 220px;
+  background: #fafafa;
+  
+  -webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+  
+}
+
+main .row .box:hover {
+  -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+  
+}
+
+
+
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color:#111;
+  margin-bottom:6px;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.box .img-especialidad{
+	width:100%;
+	
+}
+.box .img-especialidad img{
+	object-fit:contain;
+	height:150px;
+	margin-bottom:15px
+}
+
+.separador-horizontal {
+	width: 40px;
+	height: 1px;
+	margin: 20px auto;
+	background: white;
+	background: #23BE41;
+	margin-top:0;
+	margin-bottom:5px;
+}
+
+.box:hover .separador-horizontal{
+	width:100%;
+	transition: .5s ease-out;
+}
+
+/***************************************
+***Seleccion Doctor por Especialidad ***
+***************************************/
+
+main h2{
+	color:#007bff;
+}
+
+main h2 + p{
+	margin-bottom:60px;
+}
+
+
+main .row.doctores .box {
+  height: 180px;
+  
+  
+}
+
+.row.doctores h4.title {
+	font-size:15px;
+  
+  
+}
+
+.box i{
+  font-size:70px;
+  color:#e81324;
+  margin-bottom:20px; /* Don´t make it bigger than 50px ( bottom padding set for the section)*/
+
+}
+
+
+/*************************************
+** Seleccion Fecha y Hora Cita ******
+************************************/
+
+
+
+
+input#fechacita {
+   
+}
+
+input[type=date]{
+	background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.fichadoctor{
+	padding: 25px 20px;
+  padding-top:18px;
+  margin-bottom:20px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  height: 220px;
+  background: #fafafa;
+  
+}
+
+.fichadoctor h4 {
+	margin-bottom:10px;
+	
+}
+
+.fichadoctor h4 + i {
+	font-size:40px;
+	
+	margin-bottom:10px;
+	
+}
+
+.btn.btn-cita {
+	margin-top:25px;
+	color:white;
+     background-color: rgba(232,19,36,0.8);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-cita:hover,
+.btn.btn-cita:active,
+.btn.btn-cita:focus {
+    background-color: rgba(232,19,36,1);
+    
+
+}
+
+
+

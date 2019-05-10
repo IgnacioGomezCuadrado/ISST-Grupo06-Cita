@@ -3,12 +3,12 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags/medico" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 
  
-<t:pacientepagestemplate>
+<t:medicopagestemplate>
 
 	<jsp:attribute name="head">
 		<title>Citas Pendientes - DocApp</title>
@@ -22,7 +22,7 @@
 	    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
 		        <h1 class="pacientestitle">Citas Pendientes</h1>
 		</div>
-            <p>Aquí se muestra un listado con tus citas pendientes.</p>
+            <p>Aquí se muestra un listado con sus citas pendientes de atender.</p>
 		<div class="table-responsive">
 			  <table class="table table-striped table-sm">
 				<thead class="bg-light">
@@ -30,14 +30,24 @@
 						<th>Fecha</th>
 						<th>Hora</th>
 						<th>Paciente</th>
-						<th colspan="2">Acciones</th>
+						<th colspan="4">Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
-				   
+				   			<tr>
+								<td>DiaX</td>
+								<td>HoraY</td>
+								<td>Juan Pérez</td>
+								<td><button type="button" class="btn btn-info acciones-paciente">Nueva Cita</button></td>
+								<td><button type="button" class="btn btn-info acciones-paciente">Terminar Cita</button></td>
+								<td><button type="button" class="btn btn-info acciones-paciente">Solicitar Prueba</button></td>
+								<td><button type="button" class="btn btn-info acciones-paciente">Interconsulta</button></td>
+								
+							</tr>
+				   <!--
 				   <c:if test="${empty medico.citas }">
 				    <tr>
-				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">No tienes citas pendientes</td>
+				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">No tiene citas pendientes</td>
 				    </tr>
 				   </c:if>
 				   
@@ -50,14 +60,15 @@
 								<td><button type="button" class="btn btn-info acciones-paciente">Ver historial</button></td>
 							</tr>
 						</c:forEach>
-				   </c:if>	
+				   </c:if>
+				   -->	
 				</tbody>
 			</table>
 		</div>
 		
 	</jsp:body>
 
-</t:pacientepagestemplate>
+</t:medicopagestemplate>
    
 
 
