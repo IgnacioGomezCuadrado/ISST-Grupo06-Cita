@@ -58,6 +58,8 @@
 								<td><fmt:formatDate pattern = "HH:mm" value = "${cita.hora}" /></td>
 								<td>${cita.paciente.nombre } ${cita.paciente.apellidos }</td>
 								<td><button type="button" class="btn btn-info acciones-paciente">Ver historial</button></td>
+								<td><a href="ModificarCitaServlet?idMedico=${medico.email}&idPaciente=${cita.paciente.email}"><button type="button" class="btn btn-info acciones-paciente">Nueva Cita</button></a></td>
+								<td><a href="InterconsultaServlet?idPaciente=${cita.paciente.email}"><button type="button" class="btn btn-info acciones-paciente">Interconsulta</button></a></td>
 							</tr>
 						</c:forEach>
 				   </c:if>
