@@ -324,6 +324,11 @@ button.btn.btn-block.btn-signin {
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+select#inputMedico {
+    font-size: 10px;
+    height:30px;
+    width:90%;
+}
 
 
 .form-signin input {
@@ -335,17 +340,11 @@ button.btn.btn-block.btn-signin {
 }
 
 
-
 .form-signin label {
    font-weight:900;
    
 }
 
-select#inputSociedad {
-    font-size: 10px;
-    height:30px;
-    width:90%;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -353,25 +352,6 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
-
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
-}
-
-.customformfield{
-	display: block;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-weight:300;
@@ -422,19 +402,6 @@ input[type=number] {
 }
 
 
-
-
-/*************************************
-** Seleccion Fecha y Hora Cita ******
-************************************/
-
-
-
-
-input#fechacita {
-   
-}
-
 input[type=date]{
 	background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
 }
@@ -444,55 +411,6 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
-}
-
-.fichadoctor{
-	padding: 25px 20px;
-  padding-top:18px;
-  margin-bottom:20px;
-  text-align: center;
-  border: 1px solid #e6e6e6;
-  height: 220px;
-  background: #fafafa;
-  
-}
-
-.fichadoctor h4 {
-	margin-bottom:10px;
-	
-}
-
-.fichadoctor h4 + i {
-	font-size:40px;
-	
-	margin-bottom:10px;
-	
-}
-
-.btn.btn-cita {
-	margin-top:25px;
-	color:white;
-     background-color: rgba(232,19,36,0.8);
-    padding: 0px;
-    font-weight: 700;
-    font-size: 14px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
-}
-
-.btn.btn-cita:hover,
-.btn.btn-cita:active,
-.btn.btn-cita:focus {
-    background-color: rgba(232,19,36,1);
-    
-
 }
 
 
