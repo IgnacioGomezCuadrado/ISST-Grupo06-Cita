@@ -11,7 +11,14 @@
 <t:paspagestemplate>
 
 	<jsp:attribute name="head">
-		<title>Citas Pendientes - DocApp</title>
+		<title>Buscador de Citas - DocApp</title>
+	</jsp:attribute>
+	
+	<jsp:attribute name="scripts">
+		<script>
+			var today = new Date().toISOString().split('T')[0];
+			document.getElementsByName("fechacita")[0].setAttribute('min', today);
+		</script>
 	</jsp:attribute>
 		
 	
@@ -31,39 +38,24 @@
 	            <div class="form-row mt-1 mb-2 pb-4 border-bottom">
 	             <div class="col-sm-4">
 	                <label for="nombre">Paciente</label>
-	                <input type="text" name="nombre" id="inputNombre"
+	                <input type="text" name="paciente" id="inputNombre"
 							class="form-control" placeholder="Introduce aquí tu nombre" autofocus>
 	             </div>
 	             <div class="col-sm-4">
-	                <label for="sociedad">Especialidad</label>
-	                <select name="sociedad" id="inputSociedad" class="form-control">
-        				<option value="" selected>Especialidad...</option>
+	                <label for="medico">Doctor</label>
+	                <select name="medico" id="inputMedico" class="form-control">
+        				<option value="" selected>Doctor...</option>
                     </select>
 	             </div>
 	              <div class="col-sm-4">
-	                <label for="sociedad">Doctor</label>
-	                <select name="sociedad" id="inputSociedad" class="form-control" required>
-        				<option value="" selected>Doctor...</option>
-                    </select>
+	                  <label for="fechacita">Fecha</label>
+					                <input type="date" class="form-control" name="fechacita" id="fechacita">
 	              </div>
 	             </div> <!-- /row -->
 	             
 	            <div class="form-row mt-1 mb-2 pb-4 border-bottom">
-	             <div class="col-sm-4">
-	                <label for="sociedad">Doctor</label>
-	                <select name="sociedad" id="inputSociedad" class="form-control">
-        				<option value="" selected>Fecha...</option>
-                    </select>
-	             </div>
-	             <div class="col-sm-4">
-	                <label for="apellidos">Hora</label>
-	               <label for="sociedad">Doctor</label>
-	                <select name="sociedad" id="inputSociedad" class="form-control" required>
-        				<option value="" selected>Hora...</option>
-                    </select>
-	             </div>
-	              <div class="col-sm-4">
-	                <button class="btn btn-block btn-signin" type="submit">Buscar</button>
+	              <div class="col-sm-3 offset-5 align-self-center">
+	                <button class="btn btn-block btn-signin w-50" type="submit">Buscar</button>
 	              </div>
 	             </div> <!-- /row -->
 	                   
