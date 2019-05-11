@@ -22,10 +22,6 @@ public interface CitaDAO {
 	public Collection<Cita> readAll();
 	
 	public Collection<Cita> getCitasDelDia(Medico medico, Date fecha);
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 8e1278927924e31c0853d3560e7212d7bd8cdf16
 	public Collection<Cita> getCitasPAS(Paciente paciente, Medico medico, Date fecha);
 }
