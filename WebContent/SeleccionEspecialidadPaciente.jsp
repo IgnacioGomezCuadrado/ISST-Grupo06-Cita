@@ -28,9 +28,7 @@
 				<div class="col-lg-3 col-md-4">
 	           		<a href="DoctoresEspecialidadServlet?esp=${esp.id }">
                 		<div class="box">
-                			<div class="img-especialidad">
-								<img class="img-fluid" src="${pageContext.request.contextPath}/images/especialidades/cardiologia.jpg">
-							</div>
+                			<i class="fas fa-star-of-life"></i>
                 			<h4 class="title">${esp.nombre }</h4>
                 			<div class="separador-horizontal"></div>
                 		</div>

@@ -31,13 +31,13 @@
 	    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom subemargen">
 		        <h1>Selección de Fecha de Cita</h1>
 		</div>
-		    <h2 class="text-center">Doctor ${medico.apellidos}</h2>
+		    <h2 class="text-center">Doctor/a ${medico.apellidos}</h2>
             <p>Ahora elige una hora para la cita.</p>
         
         	  <div class="fichadoctor">
         	  	<div class="row">       	  	
         	  		<div class="col-6">
-        	  			<h4>Dr. ${medico.nombre} ${medico.apellidos}</h4>
+        	  			<h4>Dr/a. ${medico.nombre} ${medico.apellidos}</h4>
         	  			<i class="fas fa-user-md"></i>
         	  			
         	  			<p><i>${medico.especialidad.nombre}</i></p>

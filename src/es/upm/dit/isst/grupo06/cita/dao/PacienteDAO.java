@@ -13,6 +13,8 @@ public interface PacienteDAO {
 	public void update(Paciente paciente);
 
 	public void delete(Paciente paciente);
+	
+	public void deleteAll();
 
 	public Collection<Paciente> readAll();
 }

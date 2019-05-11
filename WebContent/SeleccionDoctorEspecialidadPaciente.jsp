@@ -3,7 +3,7 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags/paciente" %>
 
 
  
@@ -29,7 +29,7 @@
 	           		<a href="FechaServlet?med=${medEsp.email}">
                       <div class="box">
                           <i class="fas fa-user-md"></i>
-                          <h4 class="title">Doctor ${medEsp.apellidos}</h4>
+                          <h4 class="title">Doctor/a ${medEsp.apellidos}</h4>
                           <div class="separador-horizontal"></div>
                       </div>
                		</a>

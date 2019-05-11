@@ -15,7 +15,16 @@
 	</jsp:attribute>
 	
 	<jsp:attribute name="scripts">
+		<script src="${pageContext.request.contextPath}/js/jquery.autocomplete.js"></script>
 		<script>
+		var patients = ${pacientes};
+		$('#inputPaciente').devbridgeAutocomplete({
+		    lookup: patients,
+		    onSelect: function (suggestion) {
+		       document.getElementById("mailPaciente").value = suggestion.data;
+		      // console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
+		    }
+		});
 			var today = new Date().toISOString().split('T')[0];
 			document.getElementsByName("fechacita")[0].setAttribute('min', today);
 		</script>
@@ -38,22 +47,26 @@
 	            <div class="form-row mt-1 mb-2 pb-4 border-bottom">
 	             <div class="col-sm-4">
 	                <label for="nombre">Paciente</label>
-	                <input type="text" name="paciente" id="inputNombre"
-							class="form-control" placeholder="Introduce aquí tu nombre" autofocus>
+	                <input type="text" name="paciente" id="inputPaciente"
+							class="form-control" placeholder="Nombre y apellidos" autocomplete="off" autofocus>
+							<input type="hidden" name="mailpaciente" id="mailPaciente" value="">
 	             </div>
 	             <div class="col-sm-4">
 	                <label for="medico">Doctor</label>
 	                <select name="medico" id="inputMedico" class="form-control">
         				<option value="" selected>Doctor...</option>
+        				<c:forEach items="${medicos}" var="medico">
+        					<option value="${medico.email}">${medico.nombre} ${medico.apellidos}</option>
+        				</c:forEach>
                     </select>
 	             </div>
 	              <div class="col-sm-4">
 	                  <label for="fechacita">Fecha</label>
-					                <input type="date" class="form-control" name="fechacita" id="fechacita">
+	                  	<input type="date" class="form-control" name="fechacita" id="fechacita">
 	              </div>
 	             </div> <!-- /row -->
 	             
-	            <div class="form-row mt-1 mb-2 pb-4 border-bottom">
+	            <div class="form-row mt-1 mb-2">
 	              <div class="col-sm-3 offset-5 align-self-center">
 	                <button class="btn btn-block btn-signin w-50" type="submit">Buscar</button>
 	              </div>

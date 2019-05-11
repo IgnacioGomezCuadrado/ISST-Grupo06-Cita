@@ -308,6 +308,12 @@ button.btn.btn-block.btn-signin {
     width:90%;
 }
 
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; font-weight:400; }
+.autocomplete-selected { background: #e1f8ff; cursor:pointer;}
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
 
 .card {
     background-color: #F7F7F7;

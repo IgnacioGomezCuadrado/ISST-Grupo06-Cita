@@ -83,6 +83,22 @@ public class PacienteDAOImplementation implements PacienteDAO{
 			session.close();
 		}
 	}
+	
+	@Override
+	public void deleteAll() {
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			// operaciones
+			session.createQuery("DELETE FROM Paciente").executeUpdate();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			// manejar excepciones
+			System.out.println(e);
+		} finally {
+			session.close();
+		}
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override

@@ -7,8 +7,6 @@
 <%@attribute name="scripts" fragment="true" %>
 <%@taglib prefix="b" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags/pas" %>
-
-
 	<!DOCTYPE html>
 	<html lang="es" class="h-100">
 	   <head>

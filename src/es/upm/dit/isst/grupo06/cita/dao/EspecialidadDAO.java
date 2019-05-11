@@ -13,6 +13,8 @@ public interface EspecialidadDAO {
 	public void update(Especialidad especialidad);
 
 	public void delete(Especialidad especialidad);
+	
+	public void deleteAll();
 
 	public Collection<Especialidad> readAll();
 }

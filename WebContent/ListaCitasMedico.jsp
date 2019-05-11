@@ -34,17 +34,6 @@
 					</tr>
 				</thead>
 				<tbody>
-				   			<tr>
-								<td>DiaX</td>
-								<td>HoraY</td>
-								<td>Juan Pérez</td>
-								<td><button type="button" class="btn btn-info acciones-paciente">Nueva Cita</button></td>
-								<td><button type="button" class="btn btn-info acciones-paciente">Terminar Cita</button></td>
-								<td><button type="button" class="btn btn-info acciones-paciente">Solicitar Prueba</button></td>
-								<td><button type="button" class="btn btn-info acciones-paciente">Interconsulta</button></td>
-								
-							</tr>
-				   <!--
 				   <c:if test="${empty medico.citas }">
 				    <tr>
 				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">No tiene citas pendientes</td>
@@ -63,7 +52,7 @@
 							</tr>
 						</c:forEach>
 				   </c:if>
-				   -->	
+				   
 				</tbody>
 			</table>
 		</div>

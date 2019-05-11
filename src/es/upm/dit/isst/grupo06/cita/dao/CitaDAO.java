@@ -16,6 +16,8 @@ public interface CitaDAO {
 	public void update(Cita cita);
 
 	public void delete(Cita cita);
+	
+	public void deleteAll();
 
 	public Collection<Cita> readAll();
 	
