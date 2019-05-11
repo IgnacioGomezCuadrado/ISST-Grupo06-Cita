@@ -34,7 +34,7 @@ public class CitaMedicoServlet extends HttpServlet {
 		req.getSession().setAttribute("medico", medico);
 		req.getSession().setAttribute("citamedico", true);
 		
-		getServletContext().getRequestDispatcher("/SeleccionFechaPaciente.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/SeleccionFechaCita.jsp").forward(req, resp);
 	}
 	
 }

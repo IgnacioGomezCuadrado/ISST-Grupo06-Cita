@@ -21,7 +21,7 @@ public class PacienteServlet extends HttpServlet {
 
 		PacienteDAO pacientedao = PacienteDAOImplementation.getInstance();
 		Paciente paciente = pacientedao.read(id);
-
+		
 		req.getSession().setAttribute("paciente", paciente);
 
 		getServletContext().getRequestDispatcher("/ListaCitasPaciente.jsp").forward(req, resp);

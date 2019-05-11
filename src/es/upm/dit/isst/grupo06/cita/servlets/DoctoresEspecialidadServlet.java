@@ -24,7 +24,7 @@ public class DoctoresEspecialidadServlet extends HttpServlet {
 
 		req.getSession().setAttribute("especialidad", especialidad);
 
-		getServletContext().getRequestDispatcher("/SeleccionDoctorEspecialidadPaciente.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/SeleccionDoctorCita.jsp").forward(req, resp);
 	}
 
 }

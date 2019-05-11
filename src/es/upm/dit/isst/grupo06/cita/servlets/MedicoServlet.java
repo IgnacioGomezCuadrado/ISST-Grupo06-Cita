@@ -22,7 +22,7 @@ public class MedicoServlet extends HttpServlet {
 		MedicoDAO meddao = MedicoDAOImplementation.getInstance();
 		Medico medico = meddao.read(id);
 
-		req.getSession().setAttribute("medico", medico);
+		req.getSession().setAttribute("medicomismo", medico);
 
 		getServletContext().getRequestDispatcher("/ListaCitasMedico.jsp").forward(req, resp);
 	}

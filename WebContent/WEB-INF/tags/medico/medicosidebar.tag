@@ -6,7 +6,7 @@
           <i>DOCTOR</i>
       </h6>
         
-       <h6 id="bienvenida" class="text-center">Hola, Dr/a. ${medico.apellidos} </h6>
+       <h6 id="bienvenida" class="text-center">Hola, Dr/a. ${medicomismo.apellidos} </h6>
        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           CITAS CON PACIENTES
         </h6>
