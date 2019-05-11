@@ -24,45 +24,12 @@ public class FormularioServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-<<<<<<< HEAD
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("en el dopost");
-        //String nombrePaciente = req.getParameter("nombrePaciente");
-        //String apellidosPaciente = req.getParameter("apellidosPaciente");
-        String dni = req.getParameter("dni");
-        //String nombreMedico = req.getParameter("nombreMedico");
-        //String apellidosMedico = req.getParameter("apellidosMedico");
-        String email = req.getParameter("email");
-        //String especialidad = req.getParameter("especialidad");
-        String fecha = req.getParameter("fecha");
-        //String consulta = req.getParameter("consulta");
-
-        PacienteDAO pacdao = PacienteDAOImplementation.getInstance();
-        //Collection<Paciente> pac = pacdao.read(nombrePaciente,apellidosPaciente);
-        Paciente pac = pacdao.read(dni);
-
-        MedicoDAO meddao = MedicoDAOImplementation.getInstance();
-        //Collection<Medico> med = meddao.read(nombreMedico,apellidosMedico);
-        Medico med = meddao.read(email);
-
-        ///EspecialidadDAO espdao = EspecialidadDAOImplementation.getInstance();
-        //Especialidad esp = espdao.read(Integer.parseInt(especialidad));
-
-        //HorarioConsultaDAO condao = HorarioConsultaDAOImplementation.getInstance();
-        //HorarioConsulta con = condao.read(Integer.parseInt(consulta));
-
-        Date fech = null;
-
-
-        try {
-            fech = new SimpleDateFormat("dd/MM/yyyy").parse(fecha);
-=======
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String pacEmail = req.getParameter("mailpaciente");
-        
+
         String medEmail = req.getParameter("medico");
-        
+
         String fecha = req.getParameter("fechacita");
 
         PacienteDAO pacdao = PacienteDAOImplementation.getInstance();
@@ -72,10 +39,9 @@ public class FormularioServlet extends HttpServlet {
         Medico med = meddao.read(medEmail);
 
         Date fech = null;
-        
+
         try {
             fech = new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
->>>>>>> c85bb6392e74eecf00bd7c4dff96a55697169983
         } catch (ParseException e) {
 
             e.printStackTrace();
@@ -86,10 +52,6 @@ public class FormularioServlet extends HttpServlet {
 
         req.getSession().setAttribute("citas", cit);
 
-<<<<<<< HEAD
-        getServletContext().getRequestDispatcher("/ListaCitasFormulario.jsp").forward(req, resp);
-=======
         getServletContext().getRequestDispatcher("/PasServlet").forward(req, resp);
->>>>>>> c85bb6392e74eecf00bd7c4dff96a55697169983
     }
-}
+} 
