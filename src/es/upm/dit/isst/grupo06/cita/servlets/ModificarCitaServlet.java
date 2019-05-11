@@ -12,8 +12,6 @@ import es.upm.dit.isst.grupo06.cita.dao.CitaDAO;
 import es.upm.dit.isst.grupo06.cita.dao.CitaDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Cita;
 
-import es.upm.dit.isst.grupo06.cita.model.Paciente;
-
 /**
  * Servlet implementation class BorrarCitaServlet
  */

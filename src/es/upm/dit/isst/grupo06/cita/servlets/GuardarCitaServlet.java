@@ -75,8 +75,15 @@ public class GuardarCitaServlet extends HttpServlet {
 
 		}
 
-		// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
-		resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());
+		//Comprobamos si venimos de pedir cita por parte de un medico para redirigir su pantalla de inicio
+		boolean citamedico = (boolean) req.getSession().getAttribute("citamedico");
+		if (citamedico) {
+			req.getSession().setAttribute("citamedico", false);
+			resp.sendRedirect(req.getContextPath() + "/MedicoServlet?id=" + medico.getEmail());
+		} else {
+			// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
+			resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());
+		}
 	}
 
 }

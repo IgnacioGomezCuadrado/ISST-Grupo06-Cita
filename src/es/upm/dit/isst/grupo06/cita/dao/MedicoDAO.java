@@ -13,6 +13,8 @@ public interface MedicoDAO {
 	public void update(Medico medico);
 
 	public void delete(Medico medico);
+	
+	public void deleteAll();
 
 	public Collection<Medico> readAll();
 	

@@ -13,6 +13,8 @@ public interface HorarioConsultaDAO {
 	public void update(HorarioConsulta horarioConsulta);
 
 	public void delete(HorarioConsulta horarioConsulta);
+	
+	public void deleteAll();
 
 	public Collection<HorarioConsulta> readAll();
 }

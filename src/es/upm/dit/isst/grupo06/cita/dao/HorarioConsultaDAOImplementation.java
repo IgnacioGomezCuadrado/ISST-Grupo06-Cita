@@ -83,6 +83,22 @@ public class HorarioConsultaDAOImplementation implements HorarioConsultaDAO{
 			session.close();
 		}
 	}
+	
+	@Override
+	public void deleteAll() {
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			// operaciones
+			session.createQuery("DELETE FROM HorarioConsulta").executeUpdate();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			// manejar excepciones
+			System.out.println(e);
+		} finally {
+			session.close();
+		}
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override

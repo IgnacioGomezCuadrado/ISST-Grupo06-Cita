@@ -3,12 +3,12 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags/paciente" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags/medico" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 
  
-<t:pacientepagestemplate>
+<t:medicopagestemplate>
 
 	<jsp:attribute name="head">
 		<title>Citas Pendientes - DocApp</title>
@@ -22,45 +22,44 @@
 	    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
 		        <h1 class="pacientestitle">Citas Pendientes</h1>
 		</div>
-            <p>Aquí se muestra un listado con tus citas pendientes.</p>
+            <p>Aquí se muestra un listado con sus citas pendientes de atender.</p>
 		<div class="table-responsive">
 			  <table class="table table-striped table-sm">
 				<thead class="bg-light">
 					<tr>
-						<th>Cita</th>
-						<th>Médico</th>
 						<th>Fecha</th>
 						<th>Hora</th>
-						<th colspan="2">Acciones</th>
+						<th>Paciente</th>
+						<th colspan="4">Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
-				   
-				   <c:if test="${empty paciente.citas }">
+				   <c:if test="${empty medico.citas }">
 				    <tr>
-				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">No tienes citas pendientes</td>
+				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">No tiene citas pendientes</td>
 				    </tr>
 				   </c:if>
 				   
-				   <c:if test="${!empty paciente.citas }">
-					   <c:forEach items="${paciente.citas}" var="cita">
+				   <c:if test="${!empty medico.citas }">
+					   <c:forEach items="${medico.citas}" var="cita">
 							<tr>
-								<td>${cita.medico.especialidad.nombre }</td>
-								<td>${cita.medico.nombre } ${cita.medico.apellidos }</td>
 								<td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${cita.fecha}" /></td>
 								<td><fmt:formatDate pattern = "HH:mm" value = "${cita.hora}" /></td>
-								<td><a href="ModificarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Modificar</button></a></td>
-								<td><a href="BorrarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Cancelar</button></a></td>
+								<td>${cita.paciente.nombre } ${cita.paciente.apellidos }</td>
+								<td><button type="button" class="btn btn-info acciones-paciente">Ver historial</button></td>
+								<td><a href="ModificarCitaServlet?idMedico=${medico.email}&idPaciente=${cita.paciente.email}"><button type="button" class="btn btn-info acciones-paciente">Nueva Cita</button></a></td>
+								<td><a href="InterconsultaServlet?idPaciente=${cita.paciente.email}"><button type="button" class="btn btn-info acciones-paciente">Interconsulta</button></a></td>
 							</tr>
 						</c:forEach>
-				   </c:if>	
+				   </c:if>
+				   
 				</tbody>
 			</table>
 		</div>
 		
 	</jsp:body>
 
-</t:pacientepagestemplate>
+</t:medicopagestemplate>
    
 
 
