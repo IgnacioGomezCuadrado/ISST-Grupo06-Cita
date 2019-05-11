@@ -112,7 +112,7 @@ public class HorarioServlet extends HttpServlet {
 		// Pasamos el horario a la vista
 		req.getSession().setAttribute("horario", horasCitas);
 
-		getServletContext().getRequestDispatcher("/SeleccionHoraPaciente.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/SeleccionHoraCita.jsp").forward(req, resp);
 	}
 
 }

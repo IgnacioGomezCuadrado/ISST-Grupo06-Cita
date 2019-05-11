@@ -26,6 +26,6 @@ public class InterconsultaServlet extends HttpServlet {
 		req.getSession().setAttribute("paciente", paciente);
 		req.getSession().setAttribute("citamedico", true);
 		
-		getServletContext().getRequestDispatcher("/EspecialidadesServlet").forward(req, resp);
+		resp.sendRedirect(req.getContextPath()+"/EspecialidadesServlet");
 	}
 }

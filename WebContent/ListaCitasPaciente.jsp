@@ -12,8 +12,16 @@
 
 	<jsp:attribute name="head">
 		<title>Citas Pendientes - DocApp</title>
+		 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/tablesort.css" />
 	</jsp:attribute>
-		
+	<jsp:attribute name="scripts">
+		<script src="${pageContext.request.contextPath}/js/tablesort.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/tablesort.date.min.js"></script>
+		<script>
+  			new Tablesort(document.getElementById('tabla'));
+		</script>
+	</jsp:attribute>
+	
 	
 	<jsp:body>
 	   
@@ -24,20 +32,20 @@
 		</div>
             <p>Aquí se muestra un listado con tus citas pendientes.</p>
 		<div class="table-responsive">
-			  <table class="table table-striped table-sm">
+			  <table class="table table-striped table-sm" id="tabla">
 				<thead class="bg-light">
 					<tr>
-						<th>Cita</th>
-						<th>Médico</th>
-						<th>Fecha</th>
-						<th>Hora</th>
-						<th colspan="2">Acciones</th>
+						<th data-sort-method='none'>Cita</th>
+						<th data-sort-method='none'>Médico</th>
+						<th data-sort-default>Fecha</th>
+						<th data-sort-method='none'>Hora</th>
+						<th colspan="2" data-sort-method='none'>Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
 				   
 				   <c:if test="${empty paciente.citas }">
-				    <tr>
+				    <tr data-sort-method='none'>
 				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">No tienes citas pendientes</td>
 				    </tr>
 				   </c:if>
@@ -46,11 +54,27 @@
 					   <c:forEach items="${paciente.citas}" var="cita">
 							<tr>
 								<td>${cita.medico.especialidad.nombre }</td>
+								
 								<td>${cita.medico.nombre } ${cita.medico.apellidos }</td>
+								
 								<td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${cita.fecha}" /></td>
+								
 								<td><fmt:formatDate pattern = "HH:mm" value = "${cita.hora}" /></td>
-								<td><a href="ModificarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Modificar</button></a></td>
-								<td><a href="BorrarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Cancelar</button></a></td>
+								
+								<td>
+									<form action="ModificarCitaServlet" method="post">
+									<input type ="hidden" name ="cita" value ="${cita.id}">
+									<button type="submit" class="btn btn-info acciones-paciente">Modificar</button>
+									</form>
+								</td>
+								
+								<td>
+									<form action="BorrarCitaServlet" method="post">
+									<input type ="hidden" name ="cita" value ="${cita.id}">
+									<button type="submit" class="btn btn-info acciones-paciente">Cancelar Cita</button>
+									</form>
+								</td>
+								
 							</tr>
 						</c:forEach>
 				   </c:if>	
@@ -59,6 +83,8 @@
 		</div>
 		
 	</jsp:body>
+	
+
 
 </t:pacientepagestemplate>
    

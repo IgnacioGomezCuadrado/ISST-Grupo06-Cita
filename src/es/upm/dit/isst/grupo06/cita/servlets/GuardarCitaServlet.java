@@ -49,8 +49,8 @@ public class GuardarCitaServlet extends HttpServlet {
 		CitaDAO citdao = CitaDAOImplementation.getInstance();
 
 		// Comprobamos si se trata de una modificación o una creación
-		boolean modificando = (boolean) req.getSession().getAttribute("modificando");
-		if (modificando) {
+		Boolean modificando = (Boolean) req.getSession().getAttribute("modificando");
+		if ((modificando != null) && modificando) {
 			Cita citaAModificar = (Cita) req.getSession().getAttribute("citaAModificar");
 			citaAModificar.setPaciente(paciente);
 			citaAModificar.setMedico(medico);
@@ -76,10 +76,12 @@ public class GuardarCitaServlet extends HttpServlet {
 		}
 
 		//Comprobamos si venimos de pedir cita por parte de un medico para redirigir su pantalla de inicio
-		boolean citamedico = (boolean) req.getSession().getAttribute("citamedico");
-		if (citamedico) {
+		Boolean citamedico = (Boolean) req.getSession().getAttribute("citamedico");
+		System.out.println(citamedico);
+		if ((citamedico != null) && citamedico) {
 			req.getSession().setAttribute("citamedico", false);
-			resp.sendRedirect(req.getContextPath() + "/MedicoServlet?id=" + medico.getEmail());
+			Medico medicomismo = (Medico) req.getSession().getAttribute("medicomismo");
+			resp.sendRedirect(req.getContextPath() + "/MedicoServlet?id=" + medicomismo.getEmail());
 		} else {
 			// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
 			resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());

@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.upm.dit.isst.grupo06.cita.dao.MedicoDAO;
 import es.upm.dit.isst.grupo06.cita.dao.MedicoDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.dao.PacienteDAO;
+import es.upm.dit.isst.grupo06.cita.dao.PacienteDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 @WebServlet("/FechaServlet")
 public class FechaServlet extends HttpServlet {
@@ -24,7 +27,8 @@ public class FechaServlet extends HttpServlet {
 
 		req.getSession().setAttribute("medico", medico);
 
-		getServletContext().getRequestDispatcher("/SeleccionFechaPaciente.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/SeleccionFechaCita.jsp").forward(req, resp);
 	}
+	
 
 }

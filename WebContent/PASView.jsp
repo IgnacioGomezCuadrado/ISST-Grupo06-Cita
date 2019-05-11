@@ -42,7 +42,7 @@
 		
 		<div class="card">
 		  <div class="card-body">
-	       <form class="form-signin" action="" method="post">
+	       <form class="form-signin" action="FormularioServlet" method="get">
 	            
 	            <div class="form-row mt-1 mb-2 pb-4 border-bottom">
 	             <div class="col-sm-4">
@@ -91,36 +91,26 @@
 						<th colspan="2">Acciones</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td><a href="#"><button type="button" class="btn btn-info acciones-paciente">Modificar</button></a></td>
-								<td><a href="#"><button type="button" class="btn btn-info acciones-paciente">Cancelar</button></a></td>
-							</tr>
-				
-				   <!--  
-				   <c:if test="${empty paciente.citas }">
+				<tbody>  
+				   <c:if test="${empty citas }">
 				    <tr>
-				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">No tienes citas pendientes</td>
+				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">Rellena al menos un campo para solicitar resultados</td>
 				    </tr>
 				   </c:if>
 				   
-				   <c:if test="${!empty paciente.citas }">
-					   <c:forEach items="${paciente.citas}" var="cita">
+				   <c:if test="${!empty citas }">
+					   <c:forEach items="${citas}" var="cita">
 							<tr>
-								<td>${cita.medico.especialidad.nombre }</td>
-								<td>${cita.medico.nombre } ${cita.medico.apellidos }</td>
+								<td>${cita.medico.especialidad.nombre}</td>
+								<td>${cita.paciente.nombre} ${cita.paciente.apellidos}</td>
+								<td>${cita.medico.nombre} ${cita.medico.apellidos}</td>
 								<td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${cita.fecha}" /></td>
 								<td><fmt:formatDate pattern = "HH:mm" value = "${cita.hora}" /></td>
 								<td><a href="ModificarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Modificar</button></a></td>
 								<td><a href="BorrarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Cancelar</button></a></td>
 							</tr>
 						</c:forEach>
-				   </c:if>	-->
+				   </c:if>
 				</tbody>
 			</table>
 		</div>

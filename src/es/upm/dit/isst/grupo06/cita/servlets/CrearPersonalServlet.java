@@ -53,39 +53,41 @@ public class CrearPersonalServlet extends HttpServlet {
 		pdao.deleteAll();
 		pasdao.deleteAll();
 		
-		String especialidades[] = {"AlergologÌa","An·lisis ClÌnicos","AnatomÌa PatolÛgica","AnestesiologÌa y ReanimaciÛn","CardiologÌa",
-				"CardiologÌa Pedi·trica","CirugÌa CardÌaca Pedi·trica","CirugÌa Cardiovascular","CirugÌa General y del Aparato Digestivo","CirugÌa Oral y Maxilofacial","CirugÌa Pedi·trica",
-				"CirugÌa Pl·stica y Reparadora","CirugÌa Tor·cica","CirugÌa Vascular y AngiologÌa","DermatologÌa MÈdico-Quir˙rgica y VenereologÌa",
-				"ElectrofisiologÌa CardÌaca","EndocrinologÌa Pedi·trica","EndocrinologÌa y NutriciÛn","Enfermedades Infecciosas e Inmunodeficiencias","GastroenterologÌa - Aparato Digestivo",
-				"GastroenterologÌa Pedi·trica","GenÈtica ClÌnica","GinecologÌa y Obstetricia","HematologÌa y Hemoterapia","HematologÌa y OncologÌa Pedi·trica",
-				"Hemodin·mica CardÌaca","InmunologÌa","Logopedia","Medicina del Deporte","Medicina EstÈtica y Unidad L·ser","Medicina Familiar y Comunitaria",
-				"Medicina FÌsica y RehabilitaciÛn","Medicina General","Medicina Intensiva","Medicina Interna","Medicina Nuclear","Medicina Preventiva","NefrologÌa",
-				"NefrologÌa Pedi·trica","NeumologÌa","NeumologÌa Pedi·trica","NeurocirugÌa","NeurofisiologÌa","NeurologÌa","NeurologÌa Pedi·trica","NeuropsicologÌa","NeurorradiologÌa",
-				"NutriciÛn","OdontologÌa/EstomatologÌa","OftalmologÌa","OncologÌa MÈdica","OncologÌa Radioter·pica","OtorrinolaringologÌa","PediatrÌa y ¡reas EspecÌficas Salud Infantil","PodologÌa",
-				"PsicologÌa ClÌnica","PsiquiatrÌa","RadiodiagnÛstico - DiagnÛstico por imagen","RadiologÌa Pedi·trica",
-				"Radiologia Vascular e Intervencionista","ReumatologÌa","TraumatologÌa infantil","TraumatologÌa y CirugÌa OrtopÈdica","Unidad de broncoscopias",
-				"Unidad del Dolor","UrologÌa"};
+		String especialidades[] = {"Alergolog√≠a","An√°lisis Cl√≠nicos","Anatom√≠a Patol√≥gica","Anestesiolog√≠a y Reanimaci√≥n","Cardiolog√≠a",
+				"Cardiolog√≠a Pedi√°trica","Cirug√≠a Card√≠aca Pedi√°trica","Cirug√≠a Cardiovascular","Cirug√≠a General y del Aparato Digestivo","Cirug√≠a Oral y Maxilofacial","Cirug√≠a Pedi√°trica",
+				"Cirug√≠a Pl√°stica y Reparadora","Cirug√≠a Tor√°cica","Cirug√≠a Vascular y Angiolog√≠a","Dermatolog√≠a M√©dico-Quir√∫rgica y Venereolog√≠a",
+				"Electrofisiolog√≠a Card√≠aca","Endocrinolog√≠a Pedi√°trica","Endocrinolog√≠a y Nutrici√≥n","Enfermedades Infecciosas e Inmunodeficiencias","Gastroenterolog√≠a - Aparato Digestivo",
+				"Gastroenterolog√≠a Pedi√°trica","Gen√©tica Cl√≠nica","Ginecolog√≠a y Obstetricia","Hematolog√≠a y Hemoterapia","Hematolog√≠a y Oncolog√≠a Pedi√°trica",
+				"Hemodin√°mica Card√≠aca","Inmunolog√≠a","Logopedia","Medicina del Deporte","Medicina Est√©tica y Unidad L√°ser","Medicina Familiar y Comunitaria",
+				"Medicina F√≠sica y Rehabilitaci√≥n","Medicina General","Medicina Intensiva","Medicina Interna","Medicina Nuclear","Medicina Preventiva","Nefrolog√≠a",
+				"Nefrolog√≠a Pedi√°trica","Neumolog√≠a","Neumolog√≠a Pedi√°trica","Neurocirug√≠a","Neurofisiolog√≠a","Neurolog√≠a","Neurolog√≠a Pedi√°trica","Neuropsicolog√≠a","Neurorradiolog√≠a",
+				"Nutrici√≥n","Odontolog√≠a/Estomatolog√≠a","Oftalmolog√≠a","Oncolog√≠a M√©dica","Oncolog√≠a Radioter√°pica","Otorrinolaringolog√≠a","Pediatr√≠a y √Åreas Espec√≠ficas Salud Infantil","Podolog√≠a",
+				"Psicolog√≠a Cl√≠nica","Psiquiatr√≠a","Radiodiagn√≥stico - Diagn√≥stico por imagen","Radiolog√≠a Pedi√°trica",
+				"Radiologia Vascular e Intervencionista","Reumatolog√≠a","Traumatolog√≠a infantil","Traumatolog√≠a y Cirug√≠a Ortop√©dica","Unidad de broncoscopias",
+				"Unidad del Dolor","Urolog√≠a"};
 		
-		String nombres[] = {"SofÌa", "Martina","Daniela","Valeria","Noa","LucÌa","MarÌa", "Emma", "Julia", "Paula", "Alba", "Carla",
+		String nombres[] = {"Sof√≠a", "Martina","Daniela","Valeria","Noa","Luc√≠a","Mar√≠a", "Emma", "Julia", "Paula", "Alba", "Carla",
 				"Alma", "Valentina", "Sara", "Carmen", "Claudia", "Elena", "Adriana", "Lola", "Vega", "Leyre", "Alejandra", "Candela",
 				"Vera", "Olivia", "Laia", "Ana", "Jimena", "Triana", "Laura", "Aitana", "Irene", "Ariadna", "Marina" , "Victoria", "Alicia", "Carlota", "Ainara", "Marta",
-				"Clara", "Lara" ,"Zoe", "InÈs", "RocÌo", "Andrea", "¡ngela", "Blanca", "Ainhoa", "Nora", "Eva", "Natalia", "Elsa", "Nerea" , "Aina", "Gala", "¡frica", "Celia",
-				 "Iria", "Adara", "Ona", "Aroa", "Carolina", "Iris", "Gabriela", "Mara", "Isabella", "Cayetana" , "India", "Hugo", "Lucas", "MartÌn", "Mateo", "Daniel", "Alejandro", "Pablo", "Eric", "Leo" ,"Enzo",
-				 "Adri·n", "¡lvaro", "Manuel", "Mario", "David", "Izan", "Oliver" ,"Marco", "Marcos", "Marc","Sergio", "Javier", "Luca", "Gonzalo", "Carlos", "Nicol·s", "Iv·n", "Antonio", "¡ngel",
-				 "Miguel", "HÈctor", "Gabriel", "Jorge", "Juan", "Rodrigo", "Jes˙s" ,"Samuel", "JosÈ", "AarÛn", "RubÈn", "Aitor", "DarÌo", "Alan", "Pau", "Joel" , "Alberto",
-				 "Pol", "Jaime", "Nil",  "Francisco", "Luis" ,"Pedro" ,"Asier", "Sa˙l" ,"Aleix", "Unai", "Guillermo", "Santiago", "VÌctor", "Alonso", "Ra˙l", "AndrÈs", "Gerard", "Jordi"};
+				"Clara", "Lara" ,"Zoe", "In√©s", "Roc√≠o", "Andrea", "√Ångela", "Blanca", "Ainhoa", "Nora", "Eva", "Natalia", "Elsa", "Nerea" , "Aina", "Gala", "√Åfrica", "Celia",
+				 "Iria", "Adara", "Ona", "Aroa", "Carolina", "Iris", "Gabriela", "Mara", "Isabella", "Cayetana" , "India", "Hugo", "Lucas", "Mart√≠n", "Mateo", "Daniel", "Alejandro", "Pablo", "Eric", "Leo" ,"Enzo",
+				 "Adri√°n", "√Ålvaro", "Manuel", "Mario", "David", "Izan", "Oliver" ,"Marco", "Marcos", "Marc","Sergio", "Javier", "Luca", "Gonzalo", "Carlos", "Nicol√°s", "Iv√°n", "Antonio", "√Ångel",
+				 "Miguel", "H√©ctor", "Gabriel", "Jorge", "Juan", "Rodrigo", "Jes√∫s" ,"Samuel", "Jos√©", "Aar√≥n", "Rub√©n", "Aitor", "Dar√≠o", "Alan", "Pau", "Joel" , "Alberto",
+				 "Pol", "Jaime", "Nil",  "Francisco", "Luis" ,"Pedro" ,"Asier", "Sa√∫l" ,"Aleix", "Unai", "Guillermo", "Santiago", "V√≠ctor", "Alonso", "Ra√∫l", "Andr√©s", "Gerard", "Jordi"};
 		
-		String apellidos[] = {"GarcÌa","RodrÌguez","Gonz·lez","Fern·ndez","LÛpez","MartÌnez","S·nchez","PÈrez","GÛmez","MartÌn","JimÈnez","Ruiz","Hern·ndez","DÌaz","Moreno",
-				"MuÒoz","¡lvarez","Romero","Alonso","GutiÈrrez","Navarro","Torres","DomÌnguez","Ramos","V·zquez","Gil","Serrano","RamÌrez","Blanco","Molina","Morales","Ortega",
-				"Su·rez","Delgado","Castro","Ortiz","Rubio","MarÌn","Sanz","Iglesias","Medina","N˙Òez","Garrido","Castillo","CortÈs","Lozano","Guerrero","Santos","Cano",
-				"Prieto","Calvo","Vidal","MÈndez","Cruz","Gallego","Herrera","Cabrera","PeÒa","Flores","LeÛn","M·rquez","Campos","Vega","Fuentes","Carrasco","DÌez","Caballero",
-				"Nieto","Pascual","Reyes","Aguilar","Herrero","Santana","Ferrer","Lorenzo","Hidalgo","Montero","GimÈnez","Ib·Òez","Mora","Vicente","Santiago","Dur·n","Arias",
-				"Vargas","BenÌtez","Carmona","Crespo","Pastor","Soto","Soler","Velasco","Roman","S·ez","Moya","Esteban","Parra","Bravo","Gallardo","Pardo","Rojas","Merino",
+		String apellidos[] = {"Garc√≠a","Rodr√≠guez","Gonz√°lez","Fern√°ndez","L√≥pez","Mart√≠nez","S√°nchez","P√©rez","G√≥mez","Mart√≠n","Jim√©nez","Ruiz","Hern√°ndez","D√≠az","Moreno",
+				"Mu√±oz","√Ålvarez","Romero","Alonso","Guti√©rrez","Navarro","Torres","Dom√≠nguez","Ramos","V√°zquez","Gil","Serrano","Ram√≠rez","Blanco","Molina","Morales","Ortega",
+				"Su√°rez","Delgado","Castro","Ortiz","Rubio","Mar√≠n","Sanz","Iglesias","Medina","N√∫√±ez","Garrido","Castillo","Cort√©s","Lozano","Guerrero","Santos","Cano",
+				"Prieto","Calvo","Vidal","M√©ndez","Cruz","Gallego","Herrera","Cabrera","Pe√±a","Flores","Le√≥n","M√°rquez","Campos","Vega","Fuentes","Carrasco","D√≠ez","Caballero",
+				"Nieto","Pascual","Reyes","Aguilar","Herrero","Santana","Ferrer","Lorenzo","Hidalgo","Montero","Gim√©nez","Ib√°√±ez","Mora","Vicente","Santiago","Dur√°n","Arias",
+				"Vargas","Ben√≠tez","Carmona","Crespo","Pastor","Soto","Soler","Velasco","Roman","S√°ez","Moya","Esteban","Parra","Bravo","Gallardo","Pardo","Rojas","Merino",
 				"Franco","Espinosa","Lara","Izquierdo","Rivas","Rivera","Casado","Arroyo","Redondo","Camacho","Rey","Segura","Luque","Sierra","Silva","Montes","Otero","Carrillo",
-				"Marcos","Galan","RÌos","Soriano","Marti","Mendoza","Vila","Valero","Robles","Palacios","Benito","Guerra","Varela","Mateo","Bueno","ExpÛsito","MacÌas","Villar",
-				"Rold·n","Miranda","Mateos","Escudero","Pereira","GuillÈn","Casas","Aguilera","Rivero","Gracia","Padilla","Abad","Beltr·n","MenÈndez","Salas","Quintana","Conde",
-				"Roca","EstÈvez","Jurado","Acosta","Plaza","Serra","Aranda","Aparicio","Salazar","Guzm·n","Cuesta","Villanueva","Pons","Bl·zquez","Hurtado","Rueda","Pacheco","¡vila",
-				"Mesa","Blasco","Escobar","L·zaro","Salvador"};
+				"Marcos","Galan","R√≠os","Soriano","Marti","Mendoza","Vila","Valero","Robles","Palacios","Benito","Guerra","Varela","Mateo","Bueno","Exp√≥sito","Mac√≠as","Villar",
+				"Rold√°n","Miranda","Mateos","Escudero","Pereira","Guill√©n","Casas","Aguilera","Rivero","Gracia","Padilla","Abad","Beltr√°n","Men√©ndez","Salas","Quintana","Conde",
+				"Roca","Est√©vez","Jurado","Acosta","Plaza","Serra","Aranda","Aparicio","Salazar","Guzm√°n","Cuesta","Villanueva","Pons","Bl√°zquez","Hurtado","Rueda","Pacheco","√Åvila",
+				"Mesa","Blasco","Escobar","L√°zaro","Salvador"};
+		
+		
 		
 		//Creacion de especialidades y 3  medicos por especialidad
 		for(String esp:especialidades) {
@@ -106,7 +108,7 @@ public class CrearPersonalServlet extends HttpServlet {
 				m.setEspecialidad(e);
 				String s = Normalizer.normalize(chosen_name.toLowerCase()+"."+sur1.toLowerCase()+"."+sur2.toLowerCase()+"@medicos.hospital.es", Normalizer.Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
 				m.setEmail(s);
-				m.setPassword(new Sha256Hash("1234").toString()); //la contraseÒa es 1234 para todos
+				m.setPassword(new Sha256Hash("1234").toString()); //la contrase√±a es 1234 para todos
 				meddao.create(m);
 				
 			}

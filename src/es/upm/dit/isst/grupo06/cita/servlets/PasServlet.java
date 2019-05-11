@@ -3,6 +3,7 @@ package es.upm.dit.isst.grupo06.cita.servlets;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 import javax.json.Json;
 import javax.json.JsonObject;
