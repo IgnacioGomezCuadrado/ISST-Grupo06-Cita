@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 public interface CitaDAO {
 	
@@ -19,4 +20,6 @@ public interface CitaDAO {
 	public Collection<Cita> readAll();
 	
 	public Collection<Cita> getCitasDelDia(Medico medico, Date fecha);
+
+	public Collection<Cita> getCitasPAS(Paciente paciente, Medico medico, Date fecha);
 }

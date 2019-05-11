@@ -26,23 +26,14 @@ public class GuardarCitaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String horaStr = req.getParameter("hora");
 
-		// Creamos un objeto cita
-		Cita cita = new Cita();
-		
-		// Recuperamos el objeto paciente de la sesión y lo añadimos a la cita
+		// Recuperamos los objetos de la sesión
 		Paciente paciente = (Paciente) req.getSession().getAttribute("paciente");
-		cita.setPaciente(paciente);
-		
-		// Recuperamos el objeto medico de la sesión y lo añadimos a la cita
 		Medico medico = (Medico) req.getSession().getAttribute("medico");
-		cita.setMedico(medico);
-		
-		// Recuperamos el objeto fecha de la sesión
+
 		Date fecha = (Date) req.getSession().getAttribute("fecha");
 		// Creamos un objeto sql.Date (para que concuerde con el tipo del modelo)
 		java.sql.Date fechaSql = new java.sql.Date(fecha.getTime());
-		cita.setFecha(fechaSql); // y lo añadimos a la cita
-		
+
 		// Creamos una fecha a partir del string recibido como parámetro
 		Date hora = null;
 		try {
@@ -53,14 +44,37 @@ public class GuardarCitaServlet extends HttpServlet {
 		// Creamos un objeto sql.Time (para que concuerde con el tipo del modelo) a
 		// partir del util.Date parseado anteriormente
 		java.sql.Time horaSql = new Time(hora.getTime());
-		cita.setHora(horaSql);
 		
-		// Añadir consulta?
 		
-		// Creamos la cita en la base de datos
 		CitaDAO citdao = CitaDAOImplementation.getInstance();
-		citdao.create(cita);
-		
+
+		// Comprobamos si se trata de una modificación o una creación
+		boolean modificando = (boolean) req.getSession().getAttribute("modificando");
+		if (modificando) {
+			Cita citaAModificar = (Cita) req.getSession().getAttribute("citaAModificar");
+			citaAModificar.setPaciente(paciente);
+			citaAModificar.setMedico(medico);
+			citaAModificar.setFecha(fechaSql); 
+			citaAModificar.setHora(horaSql);
+			
+			citdao.update(citaAModificar);
+			
+			// Para que no se quede permanentemente modificando
+			req.getSession().setAttribute("modificando", false);
+			
+		} else { // Si es una cita nueva
+			Cita cita = new Cita(); // Creamos un objeto cita
+
+			cita.setPaciente(paciente);
+			cita.setMedico(medico);
+			cita.setFecha(fechaSql); 
+			cita.setHora(horaSql);
+
+			// Creamos la cita en la base de datos
+			citdao.create(cita);
+
+		}
+
 		// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
 		resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());
 	}
