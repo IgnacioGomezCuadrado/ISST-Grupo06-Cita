@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
 import es.upm.dit.isst.grupo06.cita.dao.EspecialidadDAO;
 import es.upm.dit.isst.grupo06.cita.dao.EspecialidadDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Especialidad;
@@ -99,6 +100,23 @@ class EspecialidadDAOImplementationTest {
 		
 		especialidaddao.delete(especialidad);
 		
+	}
+	@Test
+	void testDeleteAll() {
+		Especialidad especialidad = new Especialidad();
+		Especialidad especialidad2 = new Especialidad();
+				
+		EspecialidadDAO especialidaddao = EspecialidadDAOImplementation.getInstance();
+		especialidaddao.create(especialidad2);
+		especialidaddao.create(especialidad);
+		especialidaddao.deleteAll();
+		
+		Collection<Especialidad> esp = especialidaddao.readAll();
+		esp = especialidaddao.readAll();
+		
+		assertEquals(esp.size(),0);
+		
+
 	}
 
 }

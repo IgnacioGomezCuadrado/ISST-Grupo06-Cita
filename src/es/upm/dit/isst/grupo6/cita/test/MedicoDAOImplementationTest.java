@@ -10,7 +10,10 @@ import org.junit.jupiter.api.Test;
 
 import es.upm.dit.isst.grupo06.cita.dao.MedicoDAO;
 import es.upm.dit.isst.grupo06.cita.dao.MedicoDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.dao.PASDAO;
+import es.upm.dit.isst.grupo06.cita.dao.PASDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.PAS;
 
 class MedicoDAOImplementationTest {
 
@@ -112,6 +115,23 @@ class MedicoDAOImplementationTest {
 			}
 		}
 	
+	}
+	
+	@Test
+	void testDeleteAll() {
+		Medico medico2 = new Medico();
+		medico2.setEmail("medico2@prueba.com");
+				
+		MedicoDAO medicodao = MedicoDAOImplementation.getInstance();
+		medicodao.create(medico2);
+		medicodao.deleteAll();
+		
+		Collection<Medico> med = medicodao.readAll();
+		med = medicodao.readAll();
+		
+		assertEquals(med.size(),0);
+		
+
 	}
 
 }

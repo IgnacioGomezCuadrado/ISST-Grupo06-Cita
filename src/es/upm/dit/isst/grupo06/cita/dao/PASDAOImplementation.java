@@ -1,6 +1,9 @@
 package es.upm.dit.isst.grupo06.cita.dao;
+import java.util.Collection;
+
 import org.hibernate.Session;
 import es.upm.dit.isst.grupo06.cita.model.PAS;
+import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 public class PASDAOImplementation implements PASDAO{
 	private static PASDAOImplementation instancia = null;
@@ -95,5 +98,24 @@ public class PASDAOImplementation implements PASDAO{
 		} finally {
 			session.close();
 		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Collection<PAS> readAll() {
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			// operaciones
+			Collection<PAS> pas = session.createQuery("from PAS").list();
+			session.getTransaction().commit();
+			return pas;
+		} catch (Exception e) {
+			// manejar excepciones
+			System.out.println(e);
+		} finally {
+			session.close();
+		}
+		return null;
 	}
 }

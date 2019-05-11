@@ -8,8 +8,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import es.upm.dit.isst.grupo06.cita.dao.PASDAO;
+import es.upm.dit.isst.grupo06.cita.dao.PASDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.dao.PacienteDAO;
 import es.upm.dit.isst.grupo06.cita.dao.PacienteDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.model.PAS;
 import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 class PacienteDAOImplementationTest {
@@ -112,6 +115,23 @@ class PacienteDAOImplementationTest {
 			}
 		}
 		
+	}
+	
+	@Test
+	void testDeleteAll() {
+		Paciente paciente2 = new Paciente();
+		paciente2.setEmail("paciente2@prueba.com");
+				
+		PacienteDAO pacientedao = PacienteDAOImplementation.getInstance();
+		pacientedao.create(paciente2);
+		pacientedao.deleteAll();
+		
+		Collection<Paciente> pac = pacientedao.readAll();
+		pac = pacientedao.readAll();
+		
+		assertEquals(pac.size(),0);
+		
+
 	}
 
 }

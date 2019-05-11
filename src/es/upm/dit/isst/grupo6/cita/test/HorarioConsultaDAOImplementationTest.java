@@ -8,8 +8,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import es.upm.dit.isst.grupo06.cita.dao.CitaDAO;
+import es.upm.dit.isst.grupo06.cita.dao.CitaDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.dao.HorarioConsultaDAO;
 import es.upm.dit.isst.grupo06.cita.dao.HorarioConsultaDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.HorarioConsulta;
 
 class HorarioHorarioConsultaDAOImplementationTest {
@@ -97,6 +100,24 @@ class HorarioHorarioConsultaDAOImplementationTest {
 		
 		consultadao.delete(consulta);
 		
+	}
+	
+	@Test
+	void testDeleteAll() {
+		HorarioConsulta consulta = new HorarioConsulta();
+		HorarioConsulta consulta2 = new HorarioConsulta();
+				
+		HorarioConsultaDAO consultadao = HorarioConsultaDAOImplementation.getInstance();
+		consultadao.create(consulta2);
+		consultadao.create(consulta);
+		consultadao.deleteAll();
+		
+		Collection<HorarioConsulta> con = consultadao.readAll();
+		con = consultadao.readAll();
+		
+		assertEquals(con.size(),0);
+		
+
 	}
 
 }

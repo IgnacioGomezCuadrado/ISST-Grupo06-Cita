@@ -13,10 +13,13 @@ import es.upm.dit.isst.grupo06.cita.dao.CitaDAO;
 import es.upm.dit.isst.grupo06.cita.dao.CitaDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.dao.MedicoDAO;
 import es.upm.dit.isst.grupo06.cita.dao.MedicoDAOImplementation;
+import es.upm.dit.isst.grupo06.cita.dao.PASDAO;
+import es.upm.dit.isst.grupo06.cita.dao.PASDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.dao.PacienteDAO;
 import es.upm.dit.isst.grupo06.cita.dao.PacienteDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.PAS;
 import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 class CItaDAOImplementationTest {
@@ -204,6 +207,24 @@ class CItaDAOImplementationTest {
 		medicodao.delete(medico);
 		pacientedao.delete(paciente);
 		
+	}
+	
+	@Test
+	void testDeleteAll() {
+		Cita cita = new Cita();
+		Cita cita2 = new Cita();
+				
+		CitaDAO citadao = CitaDAOImplementation.getInstance();
+		citadao.create(cita2);
+		citadao.create(cita);
+		citadao.deleteAll();
+		
+		Collection<Cita> cit = citadao.readAll();
+		cit = citadao.readAll();
+		
+		assertEquals(cit.size(),0);
+		
+
 	}
 
 }
