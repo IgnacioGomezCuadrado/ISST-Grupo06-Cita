@@ -12,7 +12,7 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="PacienteServlet?id=${paciente.email}">
+            <a class="nav-link active" href="PasServlet?id=${pas.email}">
              <i class="fas fa-search mr-2"></i>
               Buscar citas <span class="sr-only">(current)</span>
             </a>

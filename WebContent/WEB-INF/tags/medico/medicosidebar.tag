@@ -12,7 +12,7 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="PacienteServlet?id=${paciente.email}">
+            <a class="nav-link active" href="MedicoServlet?id=${medicomismo.email}">
               <i class="fas fa-calendar-alt mr-2"></i>
               Citas pendientes <span class="sr-only">(current)</span>
             </a>
