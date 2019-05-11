@@ -8,7 +8,7 @@ public interface PacienteDAO {
 	
 	public void create(Paciente paciente);
 
-	public Paciente read(String dni);
+	public Paciente read(String email);
 
 	public void update(Paciente paciente);
 
