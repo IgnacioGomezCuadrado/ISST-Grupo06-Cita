@@ -24,6 +24,10 @@ public class BorrarCitaPASServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String idCita = req.getParameter("cita");
 		
+		String mailmedico = req.getParameter("medico");
+		String mailpaciente = req.getParameter("paciente");
+		String fechacita = req.getParameter("fechacita");
+		
 		// Borramos la cita en la base de datos
 		CitaDAO citdao = CitaDAOImplementation.getInstance();
 		Cita cita = citdao.read(Integer.parseInt(idCita));
@@ -32,8 +36,7 @@ public class BorrarCitaPASServlet extends HttpServlet {
 		PAS pas = (PAS) req.getSession().getAttribute("pas");
 		System.out.println(pas);
 		
-		resp.sendRedirect(req.getContextPath() + "/PasServlet?id=" + pas.getEmail());
-
+		resp.sendRedirect(req.getContextPath() + "/FormularioServlet");
 	}
 
 

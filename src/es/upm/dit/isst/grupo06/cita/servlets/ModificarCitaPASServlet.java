@@ -16,7 +16,7 @@ import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 /**
- * Servlet implementation class BorrarCitaServlet
+ * Servlet implementation class ModificarCitaServlet
  */
 @WebServlet("/ModificarCitaPASServlet")
 public class ModificarCitaPASServlet extends HttpServlet {
@@ -38,6 +38,8 @@ public class ModificarCitaPASServlet extends HttpServlet {
 		req.getSession().setAttribute("modificando", true);
 		req.getSession().setAttribute("citaAModificar", cita);
 		req.getSession().setAttribute("citaPAS", true);
+		
+		
 	
 		
 		// Redirigimos al paciente a la pantalla inicial donde puede ver las citas

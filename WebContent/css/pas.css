@@ -180,7 +180,7 @@ button.acciones-paciente:hover{
 ****** Seleccion Especialidad*****/
 
 main div.d-flex + p{
-	margin-bottom:20px;
+	margin-bottom:60px;
 }
 
 /*
@@ -204,7 +204,7 @@ main .row .box {
   margin-bottom:20px;
   text-align: center;
   border: 1px solid #e6e6e6;
-  height: 220px;
+  height: 180px;
   background: #fafafa;
   
   -webkit-transition-duration: 0.3s;
@@ -289,6 +289,78 @@ main .row.doctores .box {
   font-size:70px;
   color:#e81324;
   margin-bottom:20px; /* Don´t make it bigger than 50px ( bottom padding set for the section)*/
+
+}
+
+
+/*************************************
+** Seleccion Fecha y Hora Cita ******
+************************************/
+
+
+
+
+input#fechacita {
+   
+}
+
+input[type=date]{
+	background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.fichadoctor{
+	padding: 25px 20px;
+  padding-top:18px;
+  margin-bottom:20px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  height: 220px;
+  background: #fafafa;
+  
+}
+
+.fichadoctor h4 {
+	margin-bottom:10px;
+	
+}
+
+.fichadoctor h4 + i {
+	font-size:40px;
+	
+	margin-bottom:10px;
+	
+}
+
+.btn.btn-cita {
+	margin-top:25px;
+	color:white;
+     background-color: rgba(232,19,36,0.8);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-cita:hover,
+.btn.btn-cita:active,
+.btn.btn-cita:focus {
+    background-color: rgba(232,19,36,1);
+    
 
 }
 

@@ -81,7 +81,7 @@ public class GuardarCitaServlet extends HttpServlet {
 		System.out.println(citamedico);
 		//Comprobamos si venimos de pedir cita por parte de un pas para redirigir su pantalla de inicio
 		Boolean citaPAS = (Boolean) req.getSession().getAttribute("citaPAS");
-		System.out.println(citaPAS);
+		Boolean nuevaCitaPas =  (Boolean) req.getSession().getAttribute("nuevaCitaPAS");
 		
 		if ((citamedico != null) && citamedico) {
 			
@@ -93,9 +93,16 @@ public class GuardarCitaServlet extends HttpServlet {
 			req.getSession().setAttribute("citaPAS", false);
 			PAS pas = (PAS) req.getSession().getAttribute("pas");
 			System.out.println(pas);
-			resp.sendRedirect(req.getContextPath() + "/PasServlet?id=" + pas.getEmail());
+			resp.sendRedirect(req.getContextPath()+"/FormularioServlet");
+			//resp.sendRedirect(req.getContextPath() + "/PasServlet?id=" + pas.getEmail());
 			
-		} else{
+		}else if ((nuevaCitaPas != null) && nuevaCitaPas) {
+			req.getSession().setAttribute("nuevaCitaPAS", false);
+			PAS pas = (PAS) req.getSession().getAttribute("pas");
+			resp.sendRedirect(req.getContextPath()+"/PasServlet?id=" + pas.getEmail());
+			
+		}
+		else{
 			// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
 			resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());
 		}

@@ -42,7 +42,7 @@
 		
 		<div class="card">
 		  <div class="card-body">
-	       <form class="form-signin" action="FormularioServlet" method="get">
+	       <form class="form-signin" action="FormularioServlet" method="post">
 	            
 	            <div class="form-row mt-1 mb-2 pb-4 border-bottom">
 	             <div class="col-sm-4">
@@ -53,7 +53,7 @@
 	             </div>
 	             <div class="col-sm-4">
 	                <label for="medico">Doctor</label>
-	                <select name="medico" id="inputMedico" class="form-control">
+	                <select name="mailmedico" id="inputMedico" class="form-control">
         				<option value="" selected>Doctor...</option>
         				<c:forEach items="${medicos}" var="medico">
         					<option value="${medico.email}">${medico.nombre} ${medico.apellidos}</option>

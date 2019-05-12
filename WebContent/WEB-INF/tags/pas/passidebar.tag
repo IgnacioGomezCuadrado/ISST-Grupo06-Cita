@@ -18,7 +18,7 @@
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="NuevaCitaPasServlet">
               <i class="fas fa-plus mr-2"></i>
               Nueva cita para paciente
             </a>
