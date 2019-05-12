@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import es.upm.dit.isst.grupo06.cita.dao.*;
 import es.upm.dit.isst.grupo06.cita.model.Especialidad;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.PAS;
 import es.upm.dit.isst.grupo06.cita.model.Paciente;
 import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.HorarioConsulta;
@@ -51,7 +52,8 @@ public class FormularioServlet extends HttpServlet {
         Collection<Cita> cit = citdao.getCitasPAS(pac,med,fech);
 
         req.getSession().setAttribute("citas", cit);
-
-        getServletContext().getRequestDispatcher("/PasServlet").forward(req, resp);
+        PAS pas = (PAS) req.getSession().getAttribute("pas");
+        
+        getServletContext().getRequestDispatcher("/PasServlet?id=" + pas.getEmail() ).forward(req, resp);
     }
 } 

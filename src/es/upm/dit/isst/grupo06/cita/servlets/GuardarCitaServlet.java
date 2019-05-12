@@ -17,6 +17,7 @@ import es.upm.dit.isst.grupo06.cita.dao.CitaDAOImplementation;
 
 import es.upm.dit.isst.grupo06.cita.model.Cita;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
+import es.upm.dit.isst.grupo06.cita.model.PAS;
 import es.upm.dit.isst.grupo06.cita.model.Paciente;
 
 @WebServlet("/GuardarCitaServlet")
@@ -78,11 +79,23 @@ public class GuardarCitaServlet extends HttpServlet {
 		//Comprobamos si venimos de pedir cita por parte de un medico para redirigir su pantalla de inicio
 		Boolean citamedico = (Boolean) req.getSession().getAttribute("citamedico");
 		System.out.println(citamedico);
+		//Comprobamos si venimos de pedir cita por parte de un pas para redirigir su pantalla de inicio
+		Boolean citaPAS = (Boolean) req.getSession().getAttribute("citaPAS");
+		System.out.println(citaPAS);
+		
 		if ((citamedico != null) && citamedico) {
+			
 			req.getSession().setAttribute("citamedico", false);
 			Medico medicomismo = (Medico) req.getSession().getAttribute("medicomismo");
-			resp.sendRedirect(req.getContextPath() + "/MedicoServlet?id=" + medicomismo.getEmail());
-		} else {
+			resp.sendRedirect(req.getContextPath() + "/MedicoServlet?id=" + medicomismo.getEmail());		
+		}else if((citaPAS != null) && citaPAS) {
+
+			req.getSession().setAttribute("citaPAS", false);
+			PAS pas = (PAS) req.getSession().getAttribute("pas");
+			System.out.println(pas);
+			resp.sendRedirect(req.getContextPath() + "/PasServlet?id=" + pas.getEmail());
+			
+		} else{
 			// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
 			resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());
 		}

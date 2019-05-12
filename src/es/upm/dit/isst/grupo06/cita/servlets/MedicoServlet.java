@@ -11,7 +11,7 @@ import es.upm.dit.isst.grupo06.cita.dao.MedicoDAO;
 import es.upm.dit.isst.grupo06.cita.dao.MedicoDAOImplementation;
 import es.upm.dit.isst.grupo06.cita.model.Medico;
 
-@WebServlet("/MedicoServlet")
+@WebServlet({"/MedicoServlet"})
 public class MedicoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

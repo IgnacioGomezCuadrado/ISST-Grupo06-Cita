@@ -17,8 +17,8 @@ import es.upm.dit.isst.grupo06.cita.model.Paciente;
 /**
  * Servlet implementation class BorrarCitaServlet
  */
-@WebServlet("/BorrarCitaServlet")
-public class BorrarCitaServlet extends HttpServlet {
+@WebServlet("/BorrarCitaPASServlet")
+public class BorrarCitaPASServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,13 +28,12 @@ public class BorrarCitaServlet extends HttpServlet {
 		CitaDAO citdao = CitaDAOImplementation.getInstance();
 		Cita cita = citdao.read(Integer.parseInt(idCita));
 		citdao.delete(cita);
+				
+		PAS pas = (PAS) req.getSession().getAttribute("pas");
+		System.out.println(pas);
 		
-		Paciente paciente = (Paciente) req.getSession().getAttribute("paciente");
-		
-		
-		// Redirigimos al paciente a la pantalla inicial donde puede ver las citas
-		resp.sendRedirect(req.getContextPath() + "/PacienteServlet?id=" + paciente.getEmail());
-		
+		resp.sendRedirect(req.getContextPath() + "/PasServlet?id=" + pas.getEmail());
+
 	}
 
 

@@ -78,7 +78,6 @@
 	  </div>
 		
 		
-		
 		<div class="table-responsive">
 			  <table class="table table-striped table-sm">
 				<thead class="bg-light">
@@ -97,7 +96,6 @@
 				    <td class="text-muted" style="padding-top:15px; font-style:italic"  align="center" colspan="6">Rellena al menos un campo para solicitar resultados</td>
 				    </tr>
 				   </c:if>
-				   
 				   <c:if test="${!empty citas }">
 					   <c:forEach items="${citas}" var="cita">
 							<tr>
@@ -106,8 +104,20 @@
 								<td>${cita.medico.nombre} ${cita.medico.apellidos}</td>
 								<td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${cita.fecha}" /></td>
 								<td><fmt:formatDate pattern = "HH:mm" value = "${cita.hora}" /></td>
-								<td><a href="ModificarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Modificar</button></a></td>
-								<td><a href="BorrarCitaServlet?cita=${cita.id}"><button type="button" class="btn btn-info acciones-paciente">Cancelar</button></a></td>
+								<td>
+								<form action="ModificarCitaPASServlet" method="post">
+								<input type ="hidden" name ="cita" value ="${cita.id}">
+								<input type ="hidden" name ="idPaciente" value ="${cita.paciente.email}">
+								<button type="submit" class="btn btn-info acciones-paciente">Modificar</button>
+								
+								</form>
+								</td>
+								<td>
+								<form action="BorrarCitaPASServlet" method="post">
+								<input type ="hidden" name ="cita" value ="${cita.id}">
+								<button type="submit" class="btn btn-info acciones-paciente">Cancelar</button>
+								</form>
+								</td>
 							</tr>
 						</c:forEach>
 				   </c:if>
